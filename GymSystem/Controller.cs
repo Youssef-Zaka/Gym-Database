@@ -21,6 +21,12 @@ namespace GymSystem
             string query = "Select * FROM subscription,subcribed_In Where clientID = " + ClientID + " AND subscription.subscriptionID = subcribed_In.subscriptionID";
             return dbMan.ExecuteReader(query);
         }
+        public DataTable SelectAchievementsDetails(int ClientID)
+        {
+            string query = "Select achievement.achievementName , .achievement.Describtion, achievement.score FROM client, achieved, achievement Where client.clientID = "
+                + ClientID + " AND client.clientID = achieved.clientID AND achieved.achievementID = achievement.achievementID";
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable SelectClient(int ClientID)
         {
             string query = "Select * FROM client WHERE clientID = " + ClientID;
