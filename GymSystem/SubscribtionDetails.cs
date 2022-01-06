@@ -28,6 +28,7 @@ namespace GymSystem
             //if(DTR.HasRows)
             ClientName.Text = dt.Rows[0].Field<string>("fName") + " " + dt.Rows[0].Field<string>("lName");
             dt = controllerObj.SelectSubscriptionDetails(auth.getClient_ID());
+            if (dt.Rows.Count == 0) return;
             Label Titles = new Label();
             Titles.Location = new Point(210, 190);
             Titles.Text = "Subscribtion Type";

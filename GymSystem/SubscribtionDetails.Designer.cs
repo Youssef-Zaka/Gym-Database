@@ -68,7 +68,7 @@ namespace GymSystem
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.groupBox1.Controls.Add(this.SubscribtionLabel);
             this.groupBox1.Controls.Add(this.ClientNameLabel);
             this.groupBox1.Controls.Add(this.ClientName);

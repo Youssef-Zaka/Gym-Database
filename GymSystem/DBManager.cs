@@ -21,16 +21,12 @@ namespace GymSystem
             try
             {
                 myConnection.Open(); //Open a connection with the DB
-
-                // just for illustration when the database is opened, 
-                // this should NOT be shown in GUI to the user in the final application
-                // but we show it here only to make sure that the database is working
-                MessageBox.Show("Successfully connected to the database!");
             }
             catch (Exception e)
             {
                 // this message should not appear to user in the final application
                 MessageBox.Show("An error occurred while connecting to the database!");
+                
             }
         }
 
