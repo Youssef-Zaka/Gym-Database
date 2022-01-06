@@ -32,8 +32,8 @@ namespace GymSystem
             this.ClientNameLabel = new System.Windows.Forms.Label();
             this.ClientName = new System.Windows.Forms.Label();
             this.SubscribtionLabel = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
+            this.SubDetailsGroupBox = new System.Windows.Forms.GroupBox();
+            this.SubDetailsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // ClientNameLabel
@@ -66,35 +66,36 @@ namespace GymSystem
             this.SubscribtionLabel.TabIndex = 2;
             this.SubscribtionLabel.Text = "Subscribtions";
             // 
-            // groupBox1
+            // SubDetailsGroupBox
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.SubDetailsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.AutoSize = true;
-            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.groupBox1.Controls.Add(this.SubscribtionLabel);
-            this.groupBox1.Controls.Add(this.ClientNameLabel);
-            this.groupBox1.Controls.Add(this.ClientName);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(776, 426);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
+            this.SubDetailsGroupBox.AutoSize = true;
+            this.SubDetailsGroupBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.SubDetailsGroupBox.Controls.Add(this.SubscribtionLabel);
+            this.SubDetailsGroupBox.Controls.Add(this.ClientNameLabel);
+            this.SubDetailsGroupBox.Controls.Add(this.ClientName);
+            this.SubDetailsGroupBox.Location = new System.Drawing.Point(12, 12);
+            this.SubDetailsGroupBox.Name = "SubDetailsGroupBox";
+            this.SubDetailsGroupBox.Size = new System.Drawing.Size(776, 426);
+            this.SubDetailsGroupBox.TabIndex = 3;
+            this.SubDetailsGroupBox.TabStop = false;
             // 
             // SubscribtionDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.SubDetailsGroupBox);
             this.Name = "SubscribtionDetails";
             this.Text = "SubscribtionDetails";
             this.Load += new System.EventHandler(this.SubscribtionDetails_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.SubDetailsGroupBox.ResumeLayout(false);
+            this.SubDetailsGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,6 +106,6 @@ namespace GymSystem
         private System.Windows.Forms.Label ClientNameLabel;
         private System.Windows.Forms.Label ClientName;
         private System.Windows.Forms.Label SubscribtionLabel;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox SubDetailsGroupBox;
     }
 }
