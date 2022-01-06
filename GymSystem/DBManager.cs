@@ -6,12 +6,12 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
 
-namespace DBapplication
+namespace GymSystem
 {
     public class DBManager
     {
 
-        static string DB_Connection_String = @"Data Source=ZAKAS-DESKTOP;Initial Catalog=CompanyDBLab5;Integrated Security=True";
+        static string DB_Connection_String = @"Data Source=ZAKAS-DESKTOP;Initial Catalog=Gym;Integrated Security=True";
 
         SqlConnection myConnection;
 
