@@ -1,3 +1,8 @@
+#Directories
+GymSystem/.vs
+GymSystem/bin
+GymSystem/obj
+
 # Prerequisites
 *.d
 

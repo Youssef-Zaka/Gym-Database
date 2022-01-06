@@ -33,6 +33,8 @@ namespace GymSystem
             this.ClientName = new System.Windows.Forms.Label();
             this.SubscribtionLabel = new System.Windows.Forms.Label();
             this.SubDetailsGroupBox = new System.Windows.Forms.GroupBox();
+            this.PaymentMethodLabel = new System.Windows.Forms.Label();
+            this.PaymentMethod = new System.Windows.Forms.Label();
             this.SubDetailsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +52,7 @@ namespace GymSystem
             // 
             this.ClientName.AutoSize = true;
             this.ClientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientName.Location = new System.Drawing.Point(198, 57);
+            this.ClientName.Location = new System.Drawing.Point(248, 57);
             this.ClientName.Name = "ClientName";
             this.ClientName.Size = new System.Drawing.Size(78, 29);
             this.ClientName.TabIndex = 1;
@@ -73,6 +75,8 @@ namespace GymSystem
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SubDetailsGroupBox.AutoSize = true;
             this.SubDetailsGroupBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.SubDetailsGroupBox.Controls.Add(this.PaymentMethod);
+            this.SubDetailsGroupBox.Controls.Add(this.PaymentMethodLabel);
             this.SubDetailsGroupBox.Controls.Add(this.SubscribtionLabel);
             this.SubDetailsGroupBox.Controls.Add(this.ClientNameLabel);
             this.SubDetailsGroupBox.Controls.Add(this.ClientName);
@@ -81,6 +85,26 @@ namespace GymSystem
             this.SubDetailsGroupBox.Size = new System.Drawing.Size(776, 426);
             this.SubDetailsGroupBox.TabIndex = 3;
             this.SubDetailsGroupBox.TabStop = false;
+            // 
+            // PaymentMethodLabel
+            // 
+            this.PaymentMethodLabel.AutoSize = true;
+            this.PaymentMethodLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PaymentMethodLabel.Location = new System.Drawing.Point(6, 117);
+            this.PaymentMethodLabel.Name = "PaymentMethodLabel";
+            this.PaymentMethodLabel.Size = new System.Drawing.Size(193, 29);
+            this.PaymentMethodLabel.TabIndex = 3;
+            this.PaymentMethodLabel.Text = "Payment Method";
+            // 
+            // PaymentMethod
+            // 
+            this.PaymentMethod.AutoSize = true;
+            this.PaymentMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PaymentMethod.Location = new System.Drawing.Point(248, 117);
+            this.PaymentMethod.Name = "PaymentMethod";
+            this.PaymentMethod.Size = new System.Drawing.Size(193, 29);
+            this.PaymentMethod.TabIndex = 4;
+            this.PaymentMethod.Text = "Payment Method";
             // 
             // SubscribtionDetails
             // 
@@ -107,5 +131,7 @@ namespace GymSystem
         private System.Windows.Forms.Label ClientName;
         private System.Windows.Forms.Label SubscribtionLabel;
         private System.Windows.Forms.GroupBox SubDetailsGroupBox;
+        private System.Windows.Forms.Label PaymentMethod;
+        private System.Windows.Forms.Label PaymentMethodLabel;
     }
 }
