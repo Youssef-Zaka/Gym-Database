@@ -10,3 +10,5 @@ C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.pdb
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.csproj.AssemblyReference.cache
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.HallOfFame.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.ClientMeasurements.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.AddMeasurement.resources

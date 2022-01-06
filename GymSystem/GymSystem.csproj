@@ -46,12 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddMeasurement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMeasurement.Designer.cs">
+      <DependentUpon>AddMeasurement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Auth.cs" />
     <Compile Include="ClientAchievments.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ClientAchievments.Designer.cs">
       <DependentUpon>ClientAchievments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientMeasurements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientMeasurements.Designer.cs">
+      <DependentUpon>ClientMeasurements.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="DBManager.cs" />
@@ -75,8 +87,14 @@
     <Compile Include="SubscribtionDetails.Designer.cs">
       <DependentUpon>SubscribtionDetails.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddMeasurement.resx">
+      <DependentUpon>AddMeasurement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientAchievments.resx">
       <DependentUpon>ClientAchievments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientMeasurements.resx">
+      <DependentUpon>ClientMeasurements.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HallOfFame.resx">
       <DependentUpon>HallOfFame.cs</DependentUpon>

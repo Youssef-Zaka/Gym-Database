@@ -44,6 +44,21 @@ namespace GymSystem
         }
 
 
+        public DataTable SelectMeasurements(int ClientID)
+        {
+            string query = "Select * FROM measurement WHERE  measurement.clientID = " + ClientID +
+                " ORDER BY measurement.measurementDate DESC";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int InsertMeasurement(int ClientID, DateTime date, int cWeight, int cHeight, string cBodyType)
+        {
+            string query = "INSERT measurement (clientID,measurementDate,cWeight,cHeight,cBodyType)" +
+                            "Values (" + ClientID + ", '" + date.ToShortDateString() + "', "+ cWeight +", " + cHeight + ", '" + cBodyType + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+
 
         public int InsertSupplier(string snum, string sname, string city, int status)
         {

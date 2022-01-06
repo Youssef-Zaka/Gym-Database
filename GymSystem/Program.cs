@@ -16,7 +16,9 @@ namespace GymSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HallOfFame());
+            new ClientMeasurements().Show(); 
+            Application.Run();
+            //Application.Run(new ClientMeasurements());
         }
     }
 }

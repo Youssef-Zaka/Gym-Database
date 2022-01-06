@@ -97,11 +97,11 @@ FOREIGN KEY (achievementID) REFERENCES achievement,
 
 CREATE TABLE measurement
 (
-measurementID int PRIMARY KEY, 
+measurementID int IDENTITY(1,1) PRIMARY KEY  , 
 clientID int not null,  
 measurementDate date not null,
-score int not null,
-recommendedWeight int not null,
+score int ,
+recommendedWeight int ,
 cHeight int not null,
 cBodyType varchar(50) not null,
 cWeight int not null,
@@ -172,7 +172,7 @@ FOREIGN KEY (clientID) REFERENCES client,
 FOREIGN KEY (subscriptionID) REFERENCES subscription,
 )
 
-
+----------------------------------- Client Insersion -------------------------------------------------
 INSERT client (clientID, fName, lName,bDate,phoneNum,clientAddress, startDate,paymentMethod, invitationNum)
 values (1, 'Youssef', 'Zakaria', '1/10/2000', '01064504003', '36 el jabal october', '10/10/2020', 'cash', 3)
 INSERT client (clientID, fName, lName,bDate,phoneNum,clientAddress, startDate,paymentMethod, invitationNum)
@@ -184,7 +184,7 @@ values (4, 'kareem', 'medhat', '2/3/2001',	'01044432221', '25 , 47 street, zayed
 INSERT client (clientID, fName, lName,bDate,phoneNum,clientAddress, startDate,paymentMethod, invitationNum)
 values (5, 'zyad', 'saleh', '11/11/2002', '01064523232', '36 el ashgar', '1/1/2022', 'card', 1)
 
-
+----------------------------------- Subscribtion Insersion -------------------------------------------------
 INSERT subscription (subscriptionID, cost,duration,subType)
 values (1, 400, 1, 'paid')
 INSERT subscription (subscriptionID, cost,duration,subType)
@@ -202,7 +202,7 @@ values (7, 200, 1, 'paid-discounted')
 INSERT subscription (subscriptionID, cost,duration,subType)
 values (8, 500, 3, 'paid-discounted')
 
-
+----------------------------------- subscribed in relation-------------------------------------------------
 
 INSERT subcribed_In (subscriptionID,clientID)
 values (1 , 1)
@@ -215,6 +215,7 @@ values (2 , 4)
 INSERT subcribed_In (subscriptionID,clientID)
 values (4 , 5)
 
+----------------------------------- acheivement Insersion -------------------------------------------------
 
 INSERT achievement (achievementID, achievementName,Describtion,score)
 values (1, '100Pushups','Do a 100 pushups for 7 days in a row',10)
@@ -229,7 +230,25 @@ values (5, 'Run20KM','Run 20 kms on the Treadmil in under 90 minutes',100)
 INSERT achievement (achievementID, achievementName,Describtion,score)
 values (6, 'Bike40KM','bike 40 kms on the Bike machine in under 30 minutes',100)
 
+----------------------------------- Measurement Insersion -------------------------------------------------
 
+SET IDENTITY_INSERT measurement ON
+INSERT measurement (measurementID,clientID,measurementDate,recommendedWeight,cWeight,cHeight,cBodyType,score)
+Values (1,1,'1/10/2021' , 70, 80,  170,'fit',90)
+INSERT measurement (measurementID,clientID,measurementDate,recommendedWeight,cWeight,cHeight,cBodyType,score)
+Values (2,2,'1/10/2020' , 80, 90,  190,'obese',85)
+INSERT measurement (measurementID,clientID,measurementDate,recommendedWeight,cWeight,cHeight,cBodyType,score)
+Values (3,3,'1/3/2021' , 60, 60,  140,'slim',93)
+INSERT measurement (measurementID,clientID,measurementDate,recommendedWeight,cWeight,cHeight,cBodyType,score)
+Values (4,4,'3/5/2021' , 65, 70,  180,'fit',84)
+INSERT measurement (measurementID,clientID,measurementDate,recommendedWeight,cWeight,cHeight,cBodyType,score)
+Values (5,5,'1/1/2022' , 67, 67,  165,'fit',82)
+INSERT measurement (measurementID,clientID,measurementDate,recommendedWeight,cWeight,cHeight,cBodyType,score)
+Values (7,1,'1/12/2021' , 70, 79,  171,'fit',92)
+SET IDENTITY_INSERT measurement OFF
+
+
+----------------------------------- acheived relation-------------------------------------------------
 INSERT achieved (clientID, achievementID)
 values (1,1)
 INSERT achieved (clientID, achievementID)
@@ -322,4 +341,7 @@ INSERT excersise (excersiseID, exName, exDescription, duration, exImage)
 values (7, 'Deadlift', 'Use a weighted bar and lift it up the ground with hands and your straight back', 10, NULL)
 INSERT excersise (excersiseID, exName, exDescription, duration, exImage)
 values (8, 'Bench Press', 'Lean on the bench, and push the weighted bar in your chest level', 8, NULL)
+
+
+
 
