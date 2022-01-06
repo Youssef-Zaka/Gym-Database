@@ -137,10 +137,11 @@ trainerSSN varchar(14) ,
 clientID int,
 trainingDate date,
 trainingTimeSlot time,
-tWorkout varchar(14),
+tWorkout int,
 PRIMARY KEY(clientID, trainerSSN, trainingDate, trainingTimeSlot),
 FOREIGN KEY (clientID) REFERENCES client,
 FOREIGN KEY (trainerSSN) REFERENCES trainer,
+FOREIGN KEY (tWorkout) REFERENCES workout,
 )
 
 CREATE TABLE potentialClient
@@ -241,3 +242,84 @@ INSERT achieved (clientID, achievementID)
 values (4,5)
 INSERT achieved (clientID, achievementID)
 values (5,6)
+
+----------------------------------- trainer Insersion -------------------------------------------------
+INSERT trainer (trainerSSN, fName, lName, phoneNum, courseLinks, salary, trainerAddress, describtion)
+values (29762368974566, 'Hossam', 'Mahmoud', '01064504003', 
+		'https://www.udemy.com/course/complete-fitness-trainer-certification-beginner-to-advanced/', 
+		10100, '12 Ali Abdelaziz street', '5+ years of experience in fitness training')
+
+INSERT trainer (trainerSSN, fName, lName, phoneNum, courseLinks, salary, trainerAddress, describtion)
+values (24621238976533, 'Mohamed', 'Hanafy', '01148955762', 
+		'https://www.udemy.com/course/internationally-accredited-diploma-certificate-in-fitness/', 
+		8500, '12 Mahmoud Saied street', 'Personal Trainer')
+
+INSERT trainer (trainerSSN, fName, lName, phoneNum, courseLinks, salary, trainerAddress, describtion)
+values (30004170104569, 'Reem', 'Mosaad', '01224697845', 
+		'https://www.udemy.com/course/complete-fitness-trainer-certification-beginner-to-advanced/ , https://www.udemy.com/course/internationally-accredited-diploma-certificate-in-fitness/', 
+		7000, '10 Elmohamdy street', 'Personal Fitness Trainer')
+
+INSERT trainer (trainerSSN, fName, lName, phoneNum, courseLinks, salary, trainerAddress, describtion)
+values (27895632138977, 'Ahmed', 'Hossney', '01112659786', 
+		'https://www.udemy.com/course/complete-fitness-trainer-certification-beginner-to-advanced/', 
+		5700, 'Nasr street, Maadi', 'ISSA Certified Fitness Trainer, Specialist in Performance Nutrition')
+
+
+INSERT trainer (trainerSSN, fName, lName, phoneNum, courseLinks, salary, trainerAddress, describtion)
+values (28885675542369, 'Ramy', 'Hassanein', '01164904700', 
+		NULL, 
+		10200, '77 street', 'Body building specialist')
+
+
+INSERT trainer (trainerSSN, fName, lName, phoneNum, courseLinks, salary, trainerAddress, describtion)
+values (30001359794566, 'Mona', 'Waheed', '01068504103', 
+		'https://www.udemy.com/course/the-complete-fitness-health-masterclass/', 
+		7500, '1 Eldokki street', '3+ year of experience in nutrition science')
+
+INSERT trainer (trainerSSN, fName, lName, phoneNum, courseLinks, salary, trainerAddress, describtion)
+values (30008976564599, 'Walaa', 'Waheed', '01003265323', 
+		NULL, 
+		6500, '1 Eldokki street', 'Nutrition Specialist')
+
+----------------------------------- workout Insertion ------------------------------------------------
+INSERT workout (workoutID, workoutType, workoutDescription)
+values (1, 'Cardio', 'Includes exercises increase a person’s heart rate. Cardio exercises can be beneficial to people who want to reach or maintain a moderate weight or stay healthy.')
+INSERT workout (workoutID, workoutType, workoutDescription)
+values (2, 'Stretching', 'Stretching keeps the muscles flexible, strong, and healthy.')
+INSERT workout (workoutID, workoutType, workoutDescription)
+values (3, 'Balance', 'Balance training involves doing exercises that strengthen the muscles that help keep you upright, including your legs and core.')
+INSERT workout (workoutID, workoutType, workoutDescription)
+values (4, 'Weigh lifting', 'Weightlifting is a type of strength training that uses weights for resistance, by creating a stress to the muscles performed with free weights or weight machines.')
+
+----------------------------------- trains Insersion -------------------------------------------------
+INSERT trains (trainerSSN, clientID, trainingDate, trainingTimeSlot, tWorkout)
+values (30008976564599, 2, '1-1-2022', '08:00:00', 1)
+INSERT trains (trainerSSN, clientID, trainingDate, trainingTimeSlot, tWorkout)
+values (30008976564599, 2, '3-1-2022', '08:00:00', 4)
+INSERT trains (trainerSSN, clientID, trainingDate, trainingTimeSlot, tWorkout)
+values (28885675542369, 3, '1-1-2022', '13:00:00', 2)
+INSERT trains (trainerSSN, clientID, trainingDate, trainingTimeSlot, tWorkout)
+values (28885675542369, 3, '2-1-2022', '10:00:00', 4)
+INSERT trains (trainerSSN, clientID, trainingDate, trainingTimeSlot, tWorkout)
+values (24621238976533, 4, '9-1-2022', '12:00:00', 3)
+INSERT trains (trainerSSN, clientID, trainingDate, trainingTimeSlot, tWorkout)
+values (29762368974566, 5, '22-2-2022', '17:30:00', 1)
+
+----------------------------------- Excercises Insersion -------------------------------------------------
+INSERT excersise (excersiseID, exName, exDescription, duration, exImage)
+values (1, 'Jogging', 'Running in small paces ahead', 5, NULL)
+INSERT excersise (excersiseID, exName, exDescription, duration, exImage)
+values (2, 'Jump Rope', 'Using rope to jump over it', 6, NULL)
+INSERT excersise (excersiseID, exName, exDescription, duration, exImage)
+values (3, 'Side Stretch', 'raising the left arm up and sideways over the head', 3, NULL)
+INSERT excersise (excersiseID, exName, exDescription, duration, exImage)
+values (4, 'Lunges', 'stepping forward, lowering your body toward the ground, and returning back to the starting position.', 3, NULL)
+INSERT excersise (excersiseID, exName, exDescription, duration, exImage)
+values (5, 'Heel-to-toe Walk', 'For older adults to keep balance', 7, NULL)
+INSERT excersise (excersiseID, exName, exDescription, duration, exImage)
+values (6, 'Step-up', 'Moving legs over stairs one leg at at time', 6, NULL)
+INSERT excersise (excersiseID, exName, exDescription, duration, exImage)
+values (7, 'Deadlift', 'Use a weighted bar and lift it up the ground with hands and your straight back', 10, NULL)
+INSERT excersise (excersiseID, exName, exDescription, duration, exImage)
+values (8, 'Bench Press', 'Lean on the bench, and push the weighted bar in your chest level', 8, NULL)
+
