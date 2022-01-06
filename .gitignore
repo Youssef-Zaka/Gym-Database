@@ -4,9 +4,9 @@ GymSystem/bin
 GymSystem/obj
 
 #by zaka
-.suo
-.pdb
-.cache
+*.suo
+*.pdb
+*.cache
 
 
 # Prerequisites
