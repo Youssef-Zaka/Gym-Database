@@ -64,6 +64,18 @@ lastM date not null,
 mFrequency int not null,
 )
 
+CREATE TABLE trainer
+(
+trainerSSN varchar(14) PRIMARY KEY, 
+fName varchar (50) not null,
+lName varchar (50) not null,
+phoneNum varchar(11) not null,  
+courseLinks text,
+salary int not null,
+trainerAddress varchar(50) not null,
+describtion text,
+)
+
 CREATE TABLE client
 (
 clientID int PRIMARY KEY, 
@@ -75,6 +87,11 @@ clientAddress varchar(50) not null,
 startDate date not null,
 paymentMethod varchar(50) not null,
 invitationNum int not null,
+clientTrainerSSN varchar(14),
+trainingDate date,
+trainingTimeSlot time,
+clientWorkout int,
+FOREIGN KEY(clientTrainerSSN) REFERENCES trainer,
 )
 
 CREATE TABLE achievement
@@ -118,26 +135,6 @@ courseLinks text,
 salary int not null,
 rAddress varchar(50) not null,
 rShift varchar(50) not null,
-)
-
-CREATE TABLE trainer
-(
-trainerSSN varchar(14) PRIMARY KEY, 
-fName varchar (50) not null,
-lName varchar (50) not null,
-phoneNum varchar(11) not null,  
-courseLinks text,
-salary int not null,
-trainerAddress varchar(50) not null,
-describtion text,
-)
-CREATE TABLE trains
-(
-trainerSSN varchar(14) , 
-clientID int,
-PRIMARY KEY(clientID,trainerSSN),
-FOREIGN KEY (clientID) REFERENCES client,
-FOREIGN KEY (trainerSSN) REFERENCES trainer,
 )
 
 CREATE TABLE potentialClient
