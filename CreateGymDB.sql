@@ -241,3 +241,7 @@ INSERT achieved (clientID, achievementID)
 values (4,5)
 INSERT achieved (clientID, achievementID)
 values (5,6)
+
+
+INSERT machine(machineID, purchaseDate,mFrequency,cost,mCost,mLast)
+values (3, '1/6/2022' , 1 ,11500 ,800,null)

@@ -33,6 +33,18 @@ namespace GymSystem
             return dbMan.ExecuteReader(query);
         }
 
+        public DataTable SelectHallOfFame()
+        {
+            string query = "Select TOP(3)	client.fName, client.lName, " +
+        " SUM(achievement.score) AS Score FROM client, achieved, achievement" +
+        " WHERE achieved.clientID = client.clientID AND achieved.achievementID = achievement.achievementID " +
+        " GROUP BY client.fName, client.lName , client.clientID "+
+        " ORDER BY SUM(achievement.score) DESC ";
+            return dbMan.ExecuteReader(query);
+        }
+
+
+
         public int InsertSupplier(string snum, string sname, string city, int status)
         {
             string query = "INSERT INTO S (S#, Name, City, Status) " +

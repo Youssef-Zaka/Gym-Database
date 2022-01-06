@@ -8,3 +8,5 @@ C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.csproj.CoreCompileInputs.cache
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.exe
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.pdb
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.csproj.AssemblyReference.cache
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.HallOfFame.resources
