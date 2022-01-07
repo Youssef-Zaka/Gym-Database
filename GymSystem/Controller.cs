@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
-using System.Windows.Forms;
 
-namespace DBapplication
+namespace GymSystem
 {
     public class Controller
     {
@@ -16,148 +12,138 @@ namespace DBapplication
             dbMan = new DBManager();
         }
 
-        public int InsertSupplier(string snum, string sname, string city, int status)
+        public int InsertTrainer(long trainerssn, string firstname, string lastName, string sex, string trainerdate, long phone, string link, int salary, string address, string description)
+
         {
-            string query = "INSERT INTO S (S#, Name, City, Status) " +
-                            "Values ('" + snum + "','" + sname + "','" + city + "'," + status + ");";
-            return dbMan.ExecuteNonQuery(query);
-        }
-
-        public int InsertEmployee(string FName, string Minit, string LName, string SSN, DateTime BDate, string Adress
-            , string Sex, string Sallary , string SuperSSN, string Dno)
-        {
-            string query = "INSERT INTO Employee (Fname, Minit, Lname, SSN, Bdate, Address, Sex, Salary, Super_SSN, Dno) " +
-                            "Values ('" + FName + "','" + Minit + "','" + LName + "'," + SSN;
-
-            if (BDate.Year >= DateTime.Now.Year)
-            {
-                query += ", NULL";
-            }
-            else
-            {
-                query += ",'" + BDate.ToShortDateString() + "'";
-            }
-
-            if (Adress == "")
-            {
-                query += ", NULL";
-            }
-            else
-            {
-                query += ",'" + Adress + "'";
-            }
-            if (Sex == "Default")
-            {
-                query += ", NULL";
-            }
-            else
-            {
-                query += ",'" + Sex + "'";
-            }
-            if (Sallary == "")
-            {
-                query += ", NULL";
-            }
-            else
-            {
-                query += "," + Sallary;
-            }
-            if (SuperSSN == "")
-            {
-                query += ", NULL";
-            }
-            else
-            {
-                query += "," + SuperSSN;
-            }
-            if (Dno == "")
-            {
-                query += ", NULL";
-            }
-            else
-            {
-                query += "," + Dno ;
-            }
-            query += ");";
+            string query = "INSERT INTO trainer (trainerSSN, fName, lName, sex, bDate ,phoneNum, courseLinks, salary, trainerAddress ,describtion) " +
+                            "Values ('" + trainerssn + "','" + firstname + "','" + lastName + "','" + sex + "','" + Convert.ToDateTime(trainerdate) + "','" + phone + "','" + link + "','" + salary + "','" + address + "','" + description + "')";
 
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int DeleteSupplier(string snum)
+        public int Insertreceptionist(long receptionssn, string firstname, string lastName, string rbdate, string sex, long rphone, string link, int salary, string raddress, string rshift)
+
         {
-            string query = "DELETE FROM S WHERE S#='" + snum + "';";
+            string query = "INSERT INTO receptionist (rSSN, fName, lName, rBdate, sex , phoneNum ,courseLinks, salary, rAddress ,rShift) " +
+                            "Values ('" + receptionssn + "','" + firstname + "','" + lastName + "','" + Convert.ToDateTime(rbdate) + "','" + sex + "','" + rphone + "','" + link + "','" + salary + "','" + raddress + "','" + rshift + "')";
+
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int DeleteDepartment(string dnum)
+        public DataTable Selecttrainer()
         {
-            string query = "DELETE FROM Department WHERE Dnumber=" + dnum + ";";
-            return dbMan.ExecuteNonQuery(query);
-        }
-
-        public int UpdateSupplier(string snum, string city)
-        {
-            string query = "UPDATE S SET City='" + city + "' WHERE S#='" + snum + "';";
-            return dbMan.ExecuteNonQuery(query);
-        }
-
-        public int UpdateProject(string pnum, string plocation)
-        {
-            string query = "UPDATE Project SET Plocation='" + plocation + "' WHERE Pnumber=" + pnum + ";";
-            return dbMan.ExecuteNonQuery(query);
-        }
-
-        public DataTable SelectAllSuppliers()
-        {
-            string query = "SELECT * FROM S;";
+            string query = "SELECT trainerSSN FROM trainer;";
             return dbMan.ExecuteReader(query);
         }
-        public DataTable SelectAllEmployeesFromDepartment(string Dno)
+        public DataTable Selectreceptionist()
         {
-            string query = "SELECT Fname FROM Employee WHERE Dno =" +  Dno +";";
+            string query = "SELECT rSSN FROM receptionist;";
             return dbMan.ExecuteReader(query);
         }
 
-        public int CountSuppliers()
+        public int deletereceptionist(long receptionssn)
         {
-            string query = "SELECT COUNT(S#) FROM S;";
-            return (int)dbMan.ExecuteScalar(query);
-        }
-        public int CountEmployees(string ProjNum)
-        {
-            string query = "SELECT COUNT(Essn) FROM Works_On WHERE Pno =" + ProjNum + ";";
-            return (int)dbMan.ExecuteScalar(query);
+            string query = "DELETE FROM receptionist WHERE rSSN = " + receptionssn;
+            return dbMan.ExecuteNonQuery(query);
         }
 
-        public int InsertDepartment(string Dname, string DNO, string MgrSSN, DateTime MgrStartDate)
+        public int deletatrainer(long trainerssn)
         {
-            string query = "INSERT INTO Department (Dname, Dnumber, Mgr_SSN, Mgr_Start_Date)" +
-                "Values ('" + Dname +"', " +  DNO + ", " + MgrSSN + ",' " + MgrStartDate.ToShortDateString() + "');"; 
-            return (int)dbMan.ExecuteNonQuery(query);
-        }
-        public int InsertDepartmentLoc(string Dloc, string DNO)
-        {
-            string query = "INSERT INTO Dept_Locations (Dnumber, Dlocation)" +
-                "Values (" + DNO + ", '" + Dloc + "'" + ");";
-            return (int)dbMan.ExecuteNonQuery(query);
-        }
-        public int InsertProject(string Pname, string Dno, string Pnum, string ProjLoc)
-        {
-            string query = "INSERT INTO Project (Pname, Pnumber, Plocation, Dnum)" +
-                "Values ('" + Pname  + "', " + Pnum + ", '"+ ProjLoc + "', "+ Dno+ ");";
-            return (int)dbMan.ExecuteNonQuery(query);
-        }
-        public DataTable getProjects(string SSN)
-        {
-            string query = "Select Pname FROM Project , Works_On " +
-                     "Where Works_On.Essn = " + SSN + " AND Project.Pnumber = Works_On.Pno ;";
-          return dbMan.ExecuteReader(query);
+            string query = "DELETE FROM trainer WHERE trainerSSN = " + trainerssn;
+            return dbMan.ExecuteNonQuery(query);
         }
 
-        public void getAvailableDnos(int array )
-        { 
-            
+        public DataTable Selectallmachines()
+        {
+            string query = "SELECT * FROM machine;";
+            return dbMan.ExecuteReader(query);
         }
+        public DataTable Selectmachineid()
+        {
+            string query = "SELECT machineID FROM machine;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable Selectmachine(int id)
+        {
+            string query = "SELECT * FROM machine WHERE machineID='" + id + "'";
+            return dbMan.ExecuteReader(query);
+        }
+
+
+        public DataTable Selectallclasses()
+        {
+            string query = "SELECT * FROM classes;";
+            return dbMan.ExecuteReader(query);
+        }
+
+
+        public int Insertclass(string className, string startdate, int monthlyCost, int sessionFrequency)
+        {
+            string query = "INSERT INTO classes (className, startdate, monthlyCost, sessionFrequency) " +
+                            "Values ('" + className + "','" + Convert.ToDateTime(startdate) + "','" + monthlyCost + "','" + sessionFrequency + "')";
+
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int deleteclass(string classname)
+        {
+            string query = "DELETE FROM classes WHERE className='" + classname + "';"; ;
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable Selectclassnames()
+        {
+            string query = "SELECT className FROM classes;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int Insertservice(string facilityName, int mcost, string lastmaintenance, int maintenancefreq)
+        {
+            string query = "INSERT INTO facility (facilityName, mCost, lastM, mFrequency) " +
+                            "Values ('" + facilityName + "','" + mcost + "','" + Convert.ToDateTime(lastmaintenance) + "','" + maintenancefreq + "')";
+
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable showservices()
+        {
+            string query = "SELECT * FROM facility;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable showservicename()
+        {
+            string query = "SELECT facilityName FROM facility;";
+            return dbMan.ExecuteReader(query);
+        }
+        public int deleteservice(string servicename)
+        {
+            string query = "DELETE FROM facility WHERE facilityName='" + servicename + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable showstrainersinfo()
+        {
+            string query = "SELECT trainerSSN,fName,lName,salary FROM trainer;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable showsreceptioninfo()
+        {
+            string query = "SELECT rSSN,fName,lName,salary FROM receptionist;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable showtrainerSSN()
+        {
+            string query = "SELECT trainerSSN FROM trainer;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable showreceptionSSN()
+        {
+            string query = "SELECT rSSN FROM receptionist;";
+            return dbMan.ExecuteReader(query);
+        }
+
 
         public void TerminateConnection()
         {

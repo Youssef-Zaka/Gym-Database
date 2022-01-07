@@ -6,12 +6,12 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
 
-namespace DBapplication
+namespace GymSystem
 {
     public class DBManager
     {
 
-        static string DB_Connection_String = @"Data Source=ZAKAS-DESKTOP;Initial Catalog=CompanyDBLab5;Integrated Security=True";
+        static string DB_Connection_String = @"Data Source=LAPTOP-LO90OQ5G\SQLEXPRESS;Initial Catalog=Gym;Integrated Security=True";
 
         SqlConnection myConnection;
 
@@ -25,7 +25,7 @@ namespace DBapplication
                 // just for illustration when the database is opened, 
                 // this should NOT be shown in GUI to the user in the final application
                 // but we show it here only to make sure that the database is working
-                MessageBox.Show("Successfully connected to the database!");
+                
             }
             catch (Exception e)
             {

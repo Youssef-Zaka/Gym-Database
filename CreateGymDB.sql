@@ -13,6 +13,7 @@ sType Varchar(50) not null,
 CREATE TABLE machine
 (
 machineID INT PRIMARY KEY, 
+machineName varchar(50) not null,
 purchaseDate date not null,
 mFrequency int not null,
 cost int  not null,
@@ -58,10 +59,17 @@ adminAddress varchar(50) not null,
 CREATE TABLE facility
 (
 facilityName varchar(50) PRIMARY KEY, 
-openingHours varchar (50) not null,  
+--openingHours varchar (50) not null,  
 mCost int not null,
-lastM date not null,
+lastM date,
 mFrequency int not null,
+)
+CREATE TABLE classes
+(
+className varchar(50) PRIMARY KEY,  
+startdate date not null,
+monthlyCost int not null,
+sessionFrequency int not null,
 )
 
 CREATE TABLE client
@@ -113,6 +121,8 @@ CREATE TABLE receptionist
 rSSN varchar(14) PRIMARY KEY, 
 fName varchar (50) not null,
 lName varchar (50) not null,
+rBdate date not null,
+sex varchar(1) not null,
 phoneNum varchar(11) not null,  
 courseLinks text,
 salary int not null,
@@ -125,12 +135,15 @@ CREATE TABLE trainer
 trainerSSN varchar(14) PRIMARY KEY, 
 fName varchar (50) not null,
 lName varchar (50) not null,
+sex varchar(1) not null,
+bDate date not null,
 phoneNum varchar(11) not null,  
 courseLinks text,
 salary int not null,
 trainerAddress varchar(50) not null,
 describtion text,
 )
+
 CREATE TABLE trains
 (
 trainerSSN varchar(14) , 
@@ -175,13 +188,13 @@ FOREIGN KEY (subscriptionID) REFERENCES subscription,
 INSERT client (clientID, fName, lName,bDate,phoneNum,clientAddress, startDate,paymentMethod, invitationNum)
 values (1, 'Youssef', 'Zakaria', '1/10/2000', '01064504003', '36 el jabal october', '10/10/2020', 'cash', 3)
 INSERT client (clientID, fName, lName,bDate,phoneNum,clientAddress, startDate,paymentMethod, invitationNum)
-values (2, 'Ahmed', 'Mohamed', '1/12/2003', '01245678910', '12, el harm street', '12/7/2021', 'card', 2)
+values (2, 'Ahmed', 'Mostafa', '1/12/2003', '01245678910', '12, el harm street', '12/7/2021', 'card', 2)
 INSERT client (clientID, fName, lName,bDate,phoneNum,clientAddress, startDate,paymentMethod, invitationNum)
-values (3, 'mohamed', 'Ahmed', '2/12/1999', '01223456789', '14 el bostan street', '12/12/2019', 'cash', 5)
+values (3, 'Mohamed', 'Ahmed', '2/12/1999', '01223456789', '14 el bostan street', '12/12/2019', 'cash', 5)
 INSERT client (clientID, fName, lName,bDate,phoneNum,clientAddress, startDate,paymentMethod, invitationNum)
-values (4, 'kareem', 'medhat', '2/3/2001',	'01044432221', '25 , 47 street, zayed', '3/5/2018', 'cash', 7)
+values (4, 'Kareem', 'Medhat', '2/3/2001',	'01044432221', '25 , 47 street, zayed', '3/5/2018', 'cash', 7)
 INSERT client (clientID, fName, lName,bDate,phoneNum,clientAddress, startDate,paymentMethod, invitationNum)
-values (5, 'zyad', 'saleh', '11/11/2002', '01064523232', '36 el ashgar', '1/1/2022', 'card', 1)
+values (5, 'Zeyad', 'Saleh', '11/11/2002', '01064523232', '36 el ashgar', '1/1/2022', 'card', 1)
 
 
 INSERT subscription (subscriptionID, cost,duration,subType)
@@ -241,3 +254,51 @@ INSERT achieved (clientID, achievementID)
 values (4,5)
 INSERT achieved (clientID, achievementID)
 values (5,6)
+
+INSERT trainer (trainerSSN, fName, lName,sex, bDate ,phoneNum,courseLinks, salary,trainerAddress, describtion)
+values (30006160100179, 'Youssef', 'Zakaria', 'M','1/10/2000','01064504003', ' https://www.coursera.org/learn/food-and-health ', 6000 ,'36 el jabal october', 'works at H2o gym')
+INSERT trainer (trainerSSN, fName, lName,sex, bDate ,phoneNum,courseLinks, salary,trainerAddress, describtion)
+values (30006160100178, 'Ahmed', 'Mostafa',  'M','1/1/1999','01245678910', null, 6000 ,'14 el bostan street', null)
+INSERT trainer (trainerSSN, fName, lName,sex, bDate ,phoneNum,courseLinks, salary,trainerAddress, describtion)
+values (30006160100177, 'Mariam', 'Ahmed',  'F','7/24/1998','01223456789', null, 5500 ,'12 el harm street', null)
+INSERT trainer (trainerSSN, fName, lName,sex, bDate ,phoneNum,courseLinks, salary,trainerAddress, describtion)
+values (30006160100176, 'Noura', 'Medhat',  'F','5/15/1196','01044432221', null, 7000 ,' 47 street, zayed', null)
+INSERT trainer (trainerSSN, fName, lName,sex, bDate ,phoneNum,courseLinks, salary,trainerAddress, describtion)
+values (30006160100175, 'Zeyad', 'Saleh',  'M','4/26/1997','01064523232', null, 7500 ,'36 el ashgar', null)
+
+INSERT machine(machineID,machineName,purchaseDate,mFrequency,cost,mCost,mLast)
+values (1,'HAMMER STRENGTH' ,'1/1/2021',3,10000,500,'4/4/2021')
+INSERT machine(machineID,machineName,purchaseDate,mFrequency,cost,mCost,mLast)
+values (2,'LAT PULLDOWN','4/1/2021',2,12000,1000,'10/4/2021')
+INSERT machine(machineID,machineName,purchaseDate,mFrequency,cost,mCost,mLast)
+values (3,'LEG EXTENSION','1/1/2021' , 1 ,11500 ,800,'12/1/2021')
+INSERT machine(machineID,machineName,purchaseDate,mFrequency,cost,mCost,mLast)
+values (4,'LEG CURL ','1/20/2021',1,11000,700,'12/20/2021')
+INSERT machine(machineID,machineName,purchaseDate,mFrequency,cost,mCost,mLast)
+values (5,'SMITH','6/25/2021',2,10500,600,'12/27/2021')
+INSERT machine(machineID,machineName,purchaseDate,mFrequency,cost,mCost,mLast)
+values (6,'PECK DECK','7/25/2021',2,15000,600,'12/27/2021')
+
+INSERT facility(facilityName,mCost,lastM,mFrequency)
+values ('Sauna', 2000,'6/20/2021',5)
+INSERT facility(facilityName,mCost,lastM,mFrequency)
+values ('jacuzzi',1500,' ',3)
+
+
+INSERT classes(className,startdate,monthlyCost,sessionFrequency)
+values ('Zomba','1/1/2022',500,2)
+INSERT classes(className,startdate,monthlyCost,sessionFrequency)
+values ('Kickbox','1/10/2022',700,3)
+INSERT classes(className,startdate,monthlyCost,sessionFrequency)
+values ('Acrobat','1/15/2022',450,2)
+INSERT classes(className,startdate,monthlyCost,sessionFrequency)
+values ('Cardio','1/20/2022',500,2)
+
+INSERT receptionist (rSSN, fName, lName,rBdate,sex,phoneNum,courseLinks, salary, rAddress, rShift)
+values (20106160100164, 'Morsy', 'Zakaria', '1/15/1998','M','01064504002', ' https://www.coursera.org/learn/food-and-health ', 5000 ,'36 el jabal october', 'Morning')
+INSERT receptionist (rSSN, fName, lName,rBdate,sex,phoneNum,courseLinks, salary, rAddress, rShift)
+values (20106160111279, 'Ahmed', 'Moussa','7/12/1998' ,'M','01245678911', null, 5000 ,'18 el rashad street', 'Evening')
+INSERT receptionist (rSSN, fName, lName,rBdate,sex,phoneNum,courseLinks, salary, rAddress, rShift)
+values (20106170100179, 'Manar', 'Essa', '8/23/1995','F','01223456788', null, 5000 ,'14 faisal street', 'Morning')
+INSERT receptionist (rSSN, fName, lName,rBdate,sex,phoneNum,courseLinks, salary, rAddress, rShift)
+values (20121560100179, 'Mai', 'Medhat', '4/15/1999','F','01044432222', null, 5000 ,' 47 street october', 'Evening')
