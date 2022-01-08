@@ -23,6 +23,13 @@ namespace GymSystem
             DataTable dt2 = controllerObj.showservicename();
             servicecombo.DataSource = dt2;
             servicecombo.DisplayMember = "facilityName";
+            DataTable dt3 = controllerObj.Selectclassnames();
+            classcomboupdate.DataSource = dt;
+            classcomboupdate.DisplayMember = "className";
+            DataTable dt4 = controllerObj.showservicename();
+            servicecomboupdate.DataSource = dt4;
+            servicecomboupdate.DisplayMember = "facilityName";
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -177,6 +184,47 @@ namespace GymSystem
         private void exitbutton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void updateservice_Click(object sender, EventArgs e)
+        {
+            if (servicecostupdate.Text == "" || servicefrequpdate.Text == "" )
+            {
+                MessageBox.Show("Incorrect input", "Please Enter the data correctly!");
+                return;
+            }
+            int result = controllerObj.Updateservice(servicecomboupdate.Text, Int32.Parse(servicecostupdate.Text), servicedateupdate.Text, Int32.Parse(servicefrequpdate.Text));
+            if (result == 0)
+            {
+                MessageBox.Show("Invalid Update");
+            }
+            else
+            {
+                MessageBox.Show("Valid Update");
+            }
+        }
+
+        private void updateclass_Click(object sender, EventArgs e)
+        {
+            if (costclassupdate.Text == "" || freqclassupdate.Text == "")
+            {
+                MessageBox.Show("Incorrect input", "Please Enter the data correctly!");
+                return;
+            }
+            int result = controllerObj.Updateclass(classcomboupdate.Text, dateclassupdate.Text, Int32.Parse(costclassupdate.Text), Int32.Parse(freqclassupdate.Text));
+            if (result == 0)
+            {
+                MessageBox.Show("Invalid Update");
+            }
+            else
+            {
+                MessageBox.Show("Valid Update");
+            }
+        }
+
+        private void costclassupdate_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -143,11 +143,21 @@ namespace GymSystem
             string query = "SELECT rSSN FROM receptionist;";
             return dbMan.ExecuteReader(query);
         }
+        public int Updateclass(string classname , string classdate ,int classcost ,int classfreq)
+        {
+            string query = "UPDATE classes SET startdate='" + Convert.ToDateTime(classdate) + "', monthlyCost= + '" + classcost + "',sessionFrequency= + '" + classfreq + "'WHERE className='" + classname + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
 
-
+        public int Updateservice(string facilityname, int mCost, string lastM, int mFrequency)
+        {
+            string query = "UPDATE facility SET mCost='" + mCost + "', lastM= + '" + Convert.ToDateTime(lastM) + "',mFrequency= + '" + mFrequency + "'WHERE facilityName='" + facilityname + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
         public void TerminateConnection()
         {
             dbMan.CloseConnection();
         }
     }
 }
+
