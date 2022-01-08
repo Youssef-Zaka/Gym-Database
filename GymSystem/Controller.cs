@@ -12,24 +12,58 @@ namespace GymSystem
             dbMan = new DBManager();
         }
 
+        public DataTable SelectSubscriptionDetails(int ClientID)
         public int InsertTrainer(long trainerssn, string firstname, string lastName, string sex, string trainerdate, long phone, string link, int salary, string address, string description)
 
         {
+            string query = "Select * FROM subscription,subcribed_In Where clientID = " + ClientID + " AND subscription.subscriptionID = subcribed_In.subscriptionID";
+            return dbMan.ExecuteReader(query);
             string query = "INSERT INTO trainer (trainerSSN, fName, lName, sex, bDate ,phoneNum, courseLinks, salary, trainerAddress ,describtion) " +
                             "Values ('" + trainerssn + "','" + firstname + "','" + lastName + "','" + sex + "','" + Convert.ToDateTime(trainerdate) + "','" + phone + "','" + link + "','" + salary + "','" + address + "','" + description + "')";
 
             return dbMan.ExecuteNonQuery(query);
         }
+        public DataTable SelectAchievementsDetails(int ClientID)
+        {
+            string query = "Select achievement.achievementName , .achievement.Describtion, achievement.score FROM client, achieved, achievement Where client.clientID = "
+                + ClientID + " AND client.clientID = achieved.clientID AND achieved.achievementID = achievement.achievementID";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectClient(int ClientID)
+        {
+            string query = "Select * FROM client WHERE clientID = " + ClientID;
+            return dbMan.ExecuteReader(query);
+        }
 
+        public DataTable SelectHallOfFame()
         public int Insertreceptionist(long receptionssn, string firstname, string lastName, string rbdate, string sex, long rphone, string link, int salary, string raddress, string rshift)
 
         {
+            string query = "Select TOP(3)	client.fName, client.lName, " +
+        " SUM(achievement.score) AS Score FROM client, achieved, achievement" +
+        " WHERE achieved.clientID = client.clientID AND achieved.achievementID = achievement.achievementID " +
+        " GROUP BY client.fName, client.lName , client.clientID "+
+        " ORDER BY SUM(achievement.score) DESC ";
+            return dbMan.ExecuteReader(query);
+        }
             string query = "INSERT INTO receptionist (rSSN, fName, lName, rBdate, sex , phoneNum ,courseLinks, salary, rAddress ,rShift) " +
                             "Values ('" + receptionssn + "','" + firstname + "','" + lastName + "','" + Convert.ToDateTime(rbdate) + "','" + sex + "','" + rphone + "','" + link + "','" + salary + "','" + raddress + "','" + rshift + "')";
 
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public DataTable SelectMeasurements(int ClientID)
+        {
+            string query = "Select * FROM measurement WHERE  measurement.clientID = " + ClientID +
+                " ORDER BY measurement.measurementDate DESC";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectFoodMeasurements(int ClientID)
+        {
+            string query = "Select * FROM foodMeasurement WHERE  foodMeasurement.clientID = " + ClientID +
+                " ORDER BY foodMeasurement.measurementDate DESC";
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable Selecttrainer()
         {
             string query = "SELECT trainerSSN FROM trainer;";
@@ -41,20 +75,69 @@ namespace GymSystem
             return dbMan.ExecuteReader(query);
         }
 
+        public int InsertMeasurement(int ClientID, DateTime date, int cWeight, int cHeight, string cBodyType)
+        {
+            string query = "INSERT measurement (clientID,measurementDate,cWeight,cHeight,cBodyType)" +
+                            "Values (" + ClientID + ", '" + date.ToShortDateString() + "', "+ cWeight +", " + cHeight + ", '" + cBodyType + "');";
         public int deletereceptionist(long receptionssn)
         {
             string query = "DELETE FROM receptionist WHERE rSSN = " + receptionssn;
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public int InsertFoodMeasurement(int ClientID, DateTime date, int callories, int sleepHours, int numCups)
         public int deletatrainer(long trainerssn)
         {
+            string query = "INSERT foodMeasurement (clientID,measurementDate,callories,sleepHours,numCups)" +
+                            "Values (" + ClientID + ", '" + date.ToShortDateString() + "', " + callories + ", " + sleepHours + ", " + numCups + ");";
             string query = "DELETE FROM trainer WHERE trainerSSN = " + trainerssn;
             return dbMan.ExecuteNonQuery(query);
         }
 
+
+
+
+        // ========================= "Trainer" Functions =========================
+
+
+        public DataTable SelectTrainer(string trainerSSN)
         public DataTable Selectallmachines()
         {
+            string query = $"Select * FROM trainer WHERE trainerSSN = '{trainerSSN}';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectClientsTrainedBy(string trainerSSN)
+		{
+            string query = "SELECT DISTINCT client.clientID, fName, lName, bDate, phoneNum, clientAddress, startDate " +
+                "FROM client, trains " +
+                $"WHERE client.clientID = trains.clientID AND trains.trainerSSN = '{trainerSSN}';";
+
+            return dbMan.ExecuteReader(query);
+		}
+
+        public DataTable SelectCourseLinks(string SSN)
+        {
+            string query = $"SELECT C.courseLink FROM trainerCourses C WHERE C.trainerSSN = '{SSN}';";
+            return dbMan.ExecuteReader(query);
+        }
+
+      
+
+
+
+
+
+
+
+
+
+        // ========================= ================================ =========================
+        public int InsertSupplier(string snum, string sname, string city, int status)
+        {
+            string query = "INSERT INTO S (S#, Name, City, Status) " +
+                            "Values ('" + snum + "','" + sname + "','" + city + "'," + status + ");";
+            return dbMan.ExecuteNonQuery(query);
             string query = "SELECT * FROM machine;";
             return dbMan.ExecuteReader(query);
         }
@@ -64,8 +147,11 @@ namespace GymSystem
             return dbMan.ExecuteReader(query);
         }
 
+        
+        public int DeleteSupplier(string snum)
         public DataTable Selectmachine(int id)
         {
+            string query = "DELETE FROM S WHERE S#='" + snum + "';";
             string query = "SELECT * FROM machine WHERE machineID='" + id + "'";
             return dbMan.ExecuteReader(query);
         }
@@ -86,17 +172,24 @@ namespace GymSystem
             return dbMan.ExecuteNonQuery(query);
         }
 
+
+        public int UpdateSupplier(string snum, string city)
         public int deleteclass(string classname)
         {
+            string query = "UPDATE S SET City='" + city + "' WHERE S#='" + snum + "';";
             string query = "DELETE FROM classes WHERE className='" + classname + "';"; ;
             return dbMan.ExecuteNonQuery(query);
         }
 
+       
+
+        public DataTable SelectAllSuppliers()
         public DataTable Selectclassnames()
         {
             string query = "SELECT className FROM classes;";
             return dbMan.ExecuteReader(query);
         }
+        
 
         public int Insertservice(string facilityName, int mcost, string lastmaintenance, int maintenancefreq)
         {
@@ -106,6 +199,8 @@ namespace GymSystem
             return dbMan.ExecuteNonQuery(query);
         }
 
+   
+        public int CountEmployees(string ProjNum)
         public DataTable showservices()
         {
             string query = "SELECT * FROM facility;";
@@ -116,6 +211,7 @@ namespace GymSystem
             string query = "SELECT facilityName FROM facility;";
             return dbMan.ExecuteReader(query);
         }
+
         public int deleteservice(string servicename)
         {
             string query = "DELETE FROM facility WHERE facilityName='" + servicename + "';";

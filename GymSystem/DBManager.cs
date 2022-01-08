@@ -11,7 +11,7 @@ namespace GymSystem
     public class DBManager
     {
 
-        static string DB_Connection_String = @"Data Source=LAPTOP-LO90OQ5G\SQLEXPRESS;Initial Catalog=Gym;Integrated Security=True";
+        static string DB_Connection_String = @"Data Source=ZAKAS-DESKTOP;Initial Catalog=Gym;Integrated Security=True";
 
         SqlConnection myConnection;
 
@@ -21,16 +21,12 @@ namespace GymSystem
             try
             {
                 myConnection.Open(); //Open a connection with the DB
-
-                // just for illustration when the database is opened, 
-                // this should NOT be shown in GUI to the user in the final application
-                // but we show it here only to make sure that the database is working
-                
             }
             catch (Exception e)
             {
                 // this message should not appear to user in the final application
                 MessageBox.Show("An error occurred while connecting to the database!");
+                
             }
         }
 

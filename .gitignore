@@ -1,3 +1,14 @@
+#Directories
+GymSystem/.vs
+GymSystem/bin
+GymSystem/obj
+
+#by zaka
+*.suo
+*.pdb
+*.cache
+
+
 # Prerequisites
 *.d
 
