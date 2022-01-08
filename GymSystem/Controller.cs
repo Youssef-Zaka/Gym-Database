@@ -50,6 +50,12 @@ namespace GymSystem
                 " ORDER BY measurement.measurementDate DESC";
             return dbMan.ExecuteReader(query);
         }
+        public DataTable SelectFoodMeasurements(int ClientID)
+        {
+            string query = "Select * FROM foodMeasurement WHERE  foodMeasurement.clientID = " + ClientID +
+                " ORDER BY foodMeasurement.measurementDate DESC";
+            return dbMan.ExecuteReader(query);
+        }
 
         public int InsertMeasurement(int ClientID, DateTime date, int cWeight, int cHeight, string cBodyType)
         {
@@ -58,12 +64,19 @@ namespace GymSystem
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public int InsertFoodMeasurement(int ClientID, DateTime date, int callories, int sleepHours, int numCups)
+        {
+            string query = "INSERT foodMeasurement (clientID,measurementDate,callories,sleepHours,numCups)" +
+                            "Values (" + ClientID + ", '" + date.ToShortDateString() + "', " + callories + ", " + sleepHours + ", " + numCups + ");";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
 
 
 
         // ========================= "Trainer" Functions =========================
-        
-        
+
+
         public DataTable SelectTrainer(string trainerSSN)
         {
             string query = $"Select * FROM trainer WHERE trainerSSN = '{trainerSSN}';";

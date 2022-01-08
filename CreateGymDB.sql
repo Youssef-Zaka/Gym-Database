@@ -201,6 +201,34 @@ CREATE TABLE receptionistCourses
     FOREIGN KEY (rSSN) REFERENCES receptionist,
 )
 
+CREATE TABLE foodMeasurement
+(
+    measurementID int IDENTITY(1,1) PRIMARY KEY  , 
+	clientID int not null,  
+	measurementDate date not null,
+	callories int ,
+	sleepHours int ,
+	numCups int,
+	FOREIGN KEY (clientID) REFERENCES client,
+)
+
+----------------------------------- food Insersion -------------------------------------------------
+SET IDENTITY_INSERT foodMeasurement ON
+INSERT foodMeasurement (measurementID,clientID,measurementDate,callories,sleepHours,numCups)
+Values (1,1,'1/10/2021' , 1700, 8,  12)
+INSERT foodMeasurement (measurementID,clientID,measurementDate,callories,sleepHours,numCups)
+Values (2,1,'3/11/2021' , 1800, 9,  8)
+INSERT foodMeasurement (measurementID,clientID,measurementDate,callories,sleepHours,numCups)
+Values (3,2,'2/12/2022' , 2700, 9,  10)
+INSERT foodMeasurement (measurementID,clientID,measurementDate,callories,sleepHours,numCups)
+Values (4,3,'5/7/2020' , 700, 7,  11)
+INSERT foodMeasurement (measurementID,clientID,measurementDate,callories,sleepHours,numCups)
+Values (5,4,'11/11/2019' , 1450, 9,  12)
+INSERT foodMeasurement (measurementID,clientID,measurementDate,callories,sleepHours,numCups)
+Values (6,5,'6/6/2021' ,2000, 9,  12)
+SET IDENTITY_INSERT foodMeasurement OFF
+
+
 ----------------------------------- client Insersion -------------------------------------------------
 INSERT client (clientID, fName, lName,bDate,phoneNum,clientAddress, startDate,paymentMethod, invitationNum)
 VALUES (1, 'Youssef', 'Zakaria', '1/10/2000', '01064504003', '36 el jabal october', '10/10/2020', 'cash', 3)
