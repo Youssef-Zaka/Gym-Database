@@ -16,9 +16,7 @@ namespace GymSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            new ClientMeasurements().Show(); 
-            Application.Run();
-            //Application.Run(new ClientMeasurements());
+            Application.Run(new TrainerProfile());
         }
     }
 }

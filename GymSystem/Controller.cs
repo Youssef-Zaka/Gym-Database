@@ -60,6 +60,42 @@ namespace GymSystem
 
 
 
+
+        // ========================= "Trainer" Functions =========================
+        
+        
+        public DataTable SelectTrainer(string trainerSSN)
+        {
+            string query = $"Select * FROM trainer WHERE trainerSSN = '{trainerSSN}';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectClientsTrainedBy(string trainerSSN)
+		{
+            string query = "SELECT DISTINCT client.clientID, fName, lName, bDate, phoneNum, clientAddress, startDate " +
+                "FROM client, trains " +
+                $"WHERE client.clientID = trains.clientID AND trains.trainerSSN = '{trainerSSN}';";
+
+            return dbMan.ExecuteReader(query);
+		}
+
+        public DataTable SelectCourseLinks(string SSN)
+        {
+            string query = $"SELECT C.courseLink FROM trainerCourses C WHERE C.trainerSSN = '{SSN}';";
+            return dbMan.ExecuteReader(query);
+        }
+
+      
+
+
+
+
+
+
+
+
+
+        // ========================= ================================ =========================
         public int InsertSupplier(string snum, string sname, string city, int status)
         {
             string query = "INSERT INTO S (S#, Name, City, Status) " +
