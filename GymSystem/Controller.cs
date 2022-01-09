@@ -12,14 +12,18 @@ namespace GymSystem
             dbMan = new DBManager();
         }
 
-        
-        public DataTable SelectSubscriptionDetails(int ClientID)
+
+        public DataTable SelectSubscriptionDetails(int ClientID) {
+
+
+            string query = "Select * FROM subscription,subcribed_In Where clientID = " + ClientID + " AND subscription.subscriptionID = subcribed_In.subscriptionID";
+            return dbMan.ExecuteReader(query);
+        }
         public int InsertTrainer(long trainerssn, string firstname, string lastName, string sex, string trainerdate, long phone, string link, int salary, string address, string description)
 
         {
             
-            string query = "Select * FROM subscription,subcribed_In Where clientID = " + ClientID + " AND subscription.subscriptionID = subcribed_In.subscriptionID";
-            return dbMan.ExecuteReader(query);
+            
             string query = "INSERT INTO trainer (trainerSSN, fName, lName, sex, bDate ,phoneNum, courseLinks, salary, trainerAddress ,describtion) " +
                             "Values ('" + trainerssn + "','" + firstname + "','" + lastName + "','" + sex + "','" + Convert.ToDateTime(trainerdate) + "','" + phone + "','" + link + "','" + salary + "','" + address + "','" + description + "')";
 
@@ -50,21 +54,24 @@ namespace GymSystem
         }
 
         public DataTable SelectHallOfFame()
+        {
+            string query = "Select TOP(3)	client.fName, client.lName, " +
+  " SUM(achievement.score) AS Score FROM client, achieved, achievement" +
+  " WHERE achieved.clientID = client.clientID AND achieved.achievementID = achievement.achievementID " +
+  " GROUP BY client.fName, client.lName , client.clientID " +
+  " ORDER BY SUM(achievement.score) DESC ";
+            return dbMan.ExecuteReader(query);
+        }
         public int Insertreceptionist(long receptionssn, string firstname, string lastName, string rbdate, string sex, long rphone, string link, int salary, string raddress, string rshift)
 
         {
-            string query = "Select TOP(3)	client.fName, client.lName, " +
-        " SUM(achievement.score) AS Score FROM client, achieved, achievement" +
-        " WHERE achieved.clientID = client.clientID AND achieved.achievementID = achievement.achievementID " +
-        " GROUP BY client.fName, client.lName , client.clientID "+
-        " ORDER BY SUM(achievement.score) DESC ";
-            return dbMan.ExecuteReader(query);
-        }
             string query = "INSERT INTO receptionist (rSSN, fName, lName, rBdate, sex , phoneNum ,courseLinks, salary, rAddress ,rShift) " +
-                            "Values ('" + receptionssn + "','" + firstname + "','" + lastName + "','" + Convert.ToDateTime(rbdate) + "','" + sex + "','" + rphone + "','" + link + "','" + salary + "','" + raddress + "','" + rshift + "')";
+                                  "Values ('" + receptionssn + "','" + firstname + "','" + lastName + "','" + Convert.ToDateTime(rbdate) + "','" + sex + "','" + rphone + "','" + link + "','" + salary + "','" + raddress + "','" + rshift + "')";
 
             return dbMan.ExecuteNonQuery(query);
         }
+            
+        
 
         public DataTable SelectMeasurements(int ClientID)
         {
@@ -84,8 +91,6 @@ namespace GymSystem
             string query = "INSERT measurement (clientID,measurementDate,cWeight,cHeight,cBodyType)" +
                             "Values (" + ClientID + ", '" + date.ToShortDateString() + "', "+ cWeight +", " + cHeight + ", '" + cBodyType + "');";
             return dbMan.ExecuteNonQuery(query);
-            string query = "SELECT * FROM machine;";
-            return dbMan.ExecuteReader(query);
         }
         public DataTable Selectmachineid()
         {
@@ -138,23 +143,8 @@ namespace GymSystem
 
 
         // ========================= ================================ =========================
-        public int InsertTrainer(long trainerssn, string firstname, string lastName, string sex, string trainerdate, long phone, string link, int salary, string address, string description)
+     
 
-        {
-            string query = "INSERT INTO trainer (trainerSSN, fName, lName, sex, bDate ,phoneNum, courseLinks, salary, trainerAddress ,describtion) " +
-                            "Values ('" + trainerssn + "','" + firstname + "','" + lastName + "','" + sex + "','" + Convert.ToDateTime(trainerdate) + "','" + phone + "','" + link + "','" + salary + "','" + address + "','" + description + "')";
-
-            return dbMan.ExecuteNonQuery(query);
-        }
-
-        public int Insertreceptionist(long receptionssn, string firstname, string lastName, string rbdate, string sex, long rphone, string link, int salary, string raddress, string rshift)
-
-        {
-            string query = "INSERT INTO receptionist (rSSN, fName, lName, rBdate, sex , phoneNum ,courseLinks, salary, rAddress ,rShift) " +
-                            "Values ('" + receptionssn + "','" + firstname + "','" + lastName + "','" + Convert.ToDateTime(rbdate) + "','" + sex + "','" + rphone + "','" + link + "','" + salary + "','" + raddress + "','" + rshift + "')";
-
-            return dbMan.ExecuteNonQuery(query);
-        }
 
         public DataTable Selecttrainer()
         {
@@ -187,11 +177,6 @@ namespace GymSystem
         public DataTable Selectallmachines()
         {
             string query = "SELECT * FROM machine;";
-            return dbMan.ExecuteReader(query);
-        }
-        public DataTable Selectmachineid()
-        {
-            string query = "SELECT machineID FROM machine;";
             return dbMan.ExecuteReader(query);
         }
 
@@ -246,11 +231,6 @@ namespace GymSystem
         public DataTable showservices()
         {
             string query = "SELECT * FROM facility;";
-            return dbMan.ExecuteReader(query);
-        }
-        public DataTable showservicename()
-        {
-            string query = "SELECT facilityName FROM facility;";
             return dbMan.ExecuteReader(query);
         }
         public int deleteservice(string servicename)
@@ -320,11 +300,6 @@ namespace GymSystem
             return dbMan.ExecuteNonQuery(query);
         }
         
-        public DataTable SelectAllClients()
-        {
-            string query = "Select fName,lName FROM client";
-            return dbMan.ExecuteReader(query);
-        }
         
         public void TerminateConnection()
         {

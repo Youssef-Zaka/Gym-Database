@@ -16,7 +16,7 @@ namespace GymSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            new ClientSchedule().Show();
+            new New_Client().Show();
             Application.Run();
         }
     }
