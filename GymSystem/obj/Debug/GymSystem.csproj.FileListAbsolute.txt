@@ -22,3 +22,4 @@ C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.GymFacilities.resources
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.salaryManagment.resources
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.main_menu.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.csproj.AssemblyReference.cache
