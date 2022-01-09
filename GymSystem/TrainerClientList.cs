@@ -22,10 +22,26 @@ namespace GymSystem
 			controllerObj = new Controller();
 		}
 
+		public static int PassedClientID;	// used in "TrainerClientInfo" form
+		
 		private void TrainerClientList_Load(object sender, EventArgs e)
 		{
-			DataTable clientList = controllerObj.SelectClientsTrainedBy("30008976564599"/*auth.getTrainerSSN()*/);   // is to changed according to the authenticator 
+			DataTable clientList = controllerObj.SelectClientsTrainedBy(auth.getSSN());
+			if (clientList == null)
+			{
+				MessageBox.Show("You have no clients to train");
+				return;
+			}
 			dataGridClientList.DataSource = clientList;
+		}
+
+		private void dataGridClientList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			int rowIndex = dataGridClientList.CurrentCell.RowIndex;
+			int ClientID = int.Parse(dataGridClientList.Rows[rowIndex].Cells[0].Value.ToString());
+			PassedClientID = ClientID;
+			new TrainerClientInfo().Show();
+			
 		}
 	}
 }

@@ -48,7 +48,7 @@ namespace GymSystem
             if (dt != null)
             {
                 auth.setSSN(dt.Rows[0].Field<string>("rSSN"));
-                new main_menu().Show();
+                new ReceptionistMain().Show();
                 this.Hide();
                 return;
 

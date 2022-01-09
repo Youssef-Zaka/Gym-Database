@@ -58,6 +58,12 @@
     <Compile Include="AddMeasurement.Designer.cs">
       <DependentUpon>AddMeasurement.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddSupplement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSupplement.designer.cs">
+      <DependentUpon>AddSupplement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Auth.cs" />
     <Compile Include="ClientAchievments.cs">
       <SubType>Form</SubType>
@@ -127,6 +133,12 @@
     <Compile Include="HallOfFame.Designer.cs">
       <DependentUpon>HallOfFame.cs</DependentUpon>
     </Compile>
+    <Compile Include="HallOfFameBouns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HallOfFameBouns.designer.cs">
+      <DependentUpon>HallOfFameBouns.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hire_Fire.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +163,30 @@
     <Compile Include="GymFacilities.Designer.cs">
       <DependentUpon>GymFacilities.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewClient.designer.cs">
+      <DependentUpon>NewClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentMethodManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentMethodManagement.designer.cs">
+      <DependentUpon>PaymentMethodManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PotentialClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PotentialClient.designer.cs">
+      <DependentUpon>PotentialClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReceptionistMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceptionistMain.designer.cs">
+      <DependentUpon>ReceptionistMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="salaryManagment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,11 +201,38 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelfDevelopmentLinks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelfDevelopmentLinks.designer.cs">
+      <DependentUpon>SelfDevelopmentLinks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sell_UpdateSupplements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sell_UpdateSupplements.designer.cs">
+      <DependentUpon>Sell_UpdateSupplements.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubscribtionDetails.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SubscribtionDetails.Designer.cs">
       <DependentUpon>SubscribtionDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surveys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewClients.designer.cs">
+      <DependentUpon>ViewClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSurvey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewSurvey.designer.cs">
+      <DependentUpon>ViewSurvey.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddFoodMeasurement.resx">
       <DependentUpon>AddFoodMeasurement.cs</DependentUpon>
@@ -177,6 +240,13 @@
     <EmbeddedResource Include="AddMeasurement.resx">
       <DependentUpon>AddMeasurement.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Surveys.Designer.cs">
+      <DependentUpon>Surveys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrainerClientInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainerClientInfo.Designer.cs" />
     <Compile Include="TrainerClientList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,12 +259,19 @@
     <Compile Include="TrainerProfile.Designer.cs">
       <DependentUpon>TrainerProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrainerSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainerSchedule.Designer.cs" />
     <Compile Include="TrainerWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TrainerWelcome.Designer.cs">
       <DependentUpon>TrainerWelcome.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddSupplement.resx">
+      <DependentUpon>AddSupplement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientAchievments.resx">
       <DependentUpon>ClientAchievments.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,6 +302,9 @@
     <EmbeddedResource Include="CourseLinks.resx">
       <DependentUpon>CourseLinks.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HallOfFameBouns.resx">
+      <DependentUpon>HallOfFameBouns.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hire_Fire.resx">
       <DependentUpon>Hire_Fire.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,6 +316,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GymFacilities.resx">
       <DependentUpon>GymFacilities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewClient.resx">
+      <DependentUpon>NewClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentMethodManagement.resx">
+      <DependentUpon>PaymentMethodManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PotentialClient.resx">
+      <DependentUpon>PotentialClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceptionistMain.resx">
+      <DependentUpon>ReceptionistMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="salaryManagment.resx">
       <DependentUpon>salaryManagment.cs</DependentUpon>
@@ -253,17 +345,34 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SelfDevelopmentLinks.resx">
+      <DependentUpon>SelfDevelopmentLinks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sell_UpdateSupplements.resx">
+      <DependentUpon>Sell_UpdateSupplements.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubscribtionDetails.resx">
       <DependentUpon>SubscribtionDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Surveys.resx">
+      <DependentUpon>Surveys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainerClientInfo.resx" />
     <EmbeddedResource Include="TrainerClientList.resx">
       <DependentUpon>TrainerClientList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrainerProfile.resx">
       <DependentUpon>TrainerProfile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TrainerSchedule.resx" />
     <EmbeddedResource Include="TrainerWelcome.resx">
       <DependentUpon>TrainerWelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewClients.resx">
+      <DependentUpon>ViewClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewSurvey.resx">
+      <DependentUpon>ViewSurvey.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -29,3 +29,16 @@ C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.Login.resources
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.ClientWelcome.resources
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.forgotPass.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.TrainerClientInfo.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.TrainerSchedule.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.AddSupplement.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.HallOfFameBouns.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.NewClient.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.PaymentMethodManagement.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.PotentialClient.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.ReceptionistMain.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.SelfDevelopmentLinks.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.Sell_UpdateSupplements.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.Surveys.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.ViewClients.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.ViewSurvey.resources

@@ -110,7 +110,77 @@ namespace GymSystem
 
 
 
+        public DataTable SelectTrainerSchedule(string SSN)
+        {
+            string query = $"select t.trainingDate, t.trainingTimeSlot, c.fName, c.lName, c.phoneNum, c.clientAddress " +
+                        $"from trains t, client c " +
+                        $"where t.trainerSSN = '{SSN}' and c.clientID = t.clientID " +
+                        $"order by t.trainingDate desc, t.trainingTimeSlot desc;";
+            return dbMan.ExecuteReader(query);
+        }
 
+        public DataTable SelectTrainerClientMeasurements(int clientID)
+        {
+            string query = "select measurementDate, score, recommendedWeight, cHeight, cWeight, cBodyType " +
+                    "from client c, measurement m " +
+                    $"where c.clientID = m.clientID and c.clientID = {clientID} " +
+                    "order by measurementDate desc;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int UpdateRecommWeight(int clientID, int weight)
+        {
+            string query = "update measurement " +
+                    $"set recommendedWeight = {weight} " +
+                    $"where clientID = {clientID} and measurementDate = " +
+                    "(select max(measurementDate) " +
+                    "from measurement " +
+                    $"where clientID = {clientID});";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable SelectAchievementNames(int clientID)
+        {
+            string query = "select distinct achievement.achievementName FROM achieved, achievement Where achievement.achievementName NOT IN( " +
+                    "Select achievement.achievementName FROM achieved, achievement Where achieved.achievementID = achievement.achievementID " +
+                    $"and clientID = {clientID});";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectClientAchievements(int clientID)
+        {
+            string query = $"select achievementName, clientID from achievement a, achieved ad where clientID = {clientID} and a.achievementID = ad.achievementID;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int InsertAchievment(int clientID, string achName)
+        {
+            string query = "insert into achieved " +
+                    $"values({clientID}, (select max(a.achievementID) from achievement a " +
+                    $"where a.achievementName = '{achName}'));";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int DeleteAchievment(int clientID, string achName)
+        {
+            string query = $"delete from achieved where clientID = {clientID} and " +
+                    $"achievementID = (select achievementID from achievement where achievementName = '{achName}')";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable SelectClientWorkout(int clientID)
+        {
+            string query = $"select workoutType from trains, workout where workoutID = tWorkout and clientID = {clientID};";
+            return dbMan.ExecuteReader(query);
+        }
+
+
+        public int UpdateWorkout(int clientID, string workout)
+        {
+            string query = $"update trains set tWorkout = (select workoutID from workout where workoutType = '{workout}') where clientID = {clientID};";
+            return dbMan.ExecuteNonQuery(query);
+
+        }
 
 
 
@@ -361,6 +431,111 @@ namespace GymSystem
                 "' AND ClientProfiles.pass = '" + pass + "';";
             return dbMan.ExecuteReader(query);
         }
+
+        ////////////////////////////////////////////////////EZZ/////////////////////////////////////////////////////////////////////////
+        public DataTable SelectAllClients()
+        {
+            string query = "Select fName,lName FROM client";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectLastVisit()
+        {
+            string query = "Select lastVisit FROM client";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectRSSN()
+        {
+            string query = "SELECT DISTINCT rSSN FROM receptionistCourses;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int InsertClient(string fName, string lName, DateTime bDate, int phoneNumber, string clientAddress, string paymentMethod, int invitationNum)
+        {
+            string query = $@"INSERT INTO client(fName, lName, bDate ,phoneNum ,clientAddress,startDate,paymentMethod,invitationNum,lastVisit  ) 
+                            Values ('{ fName}','{lName}','  {bDate.ToShortDateString()}',' {phoneNumber}',' {clientAddress}','{DateTime.Now.ToShortDateString()}',' {paymentMethod}',' {invitationNum}',' {DateTime.Now.ToShortDateString()}' );";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int InsertPotenialClient(string SSN, string fName, string lName, DateTime bDate, int phoneNumber, string clientAddress)
+        {
+            string query = $@"INSERT INTO potentialClient(SSN, fName, lName, bDate ,phoneNum ,clientAddress, visitDate) 
+                            Values ('{ SSN}','{ fName}','{lName}','  {bDate.ToShortDateString()}',' {phoneNumber}',' {clientAddress}',' {DateTime.Now.ToShortDateString()}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int InsertSurvey(string trainerRate, string facilityRate, string machinesRate, string receptionistRate)
+        {
+            string query = $@"INSERT INTO rating(clientID,surveyDate,trainerRate,facilityRate,machinesRate,receptionistRate) 
+                            Values ('{ Auth.Instance.getClient_ID()}','{DateTime.Now.ToShortDateString()}','  {trainerRate}',' {facilityRate}',' {machinesRate}','{receptionistRate}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int InsertSupplement(string sName, string Stock, int cost, string sType)
+        {
+            string query = $@"INSERT INTO supplement(sName,stock,cost,sType) 
+                            Values ('{sName}','{Stock}','  {cost}',' {sType}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int InsertSubs(string subscriptionID, string clientID)
+        {
+            string query = $@"INSERT INTO subcribed_In(subscriptionID,clientID) 
+                            Values ('{subscriptionID}','{clientID}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable ShowSurveys()
+        {
+            string query = "Select surveyDate,trainerRate,facilityRate,machinesRate,receptionistRate FROM rating";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable ShowRCourseLinks()
+        {
+            string query = "Select courseLink FROM receptionistCourses Where rSSN = " + Auth.Instance.getSSN() + ";";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable ShowSupplements()
+        {
+            string query = "Select * FROM supplement";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable ShowClientID()
+        {
+            string query = "Select clientID , fName, lName , paymentMethod FROM client";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable ShowSubs()
+        {
+            string query = "Select * FROM subscription";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectSupplementStock(string supplementID)
+        {
+            string query = "Select stock FROM supplement WHERE supplementID = " + supplementID + ";";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int UpdateSupplement(string supplementID, int stock)
+        {
+            string query = "UPDATE supplement SET stock='" + stock + "' WHERE supplementID = '" + supplementID + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int UpdatePaymentMehod(string clientID, string paymentMethod)
+        {
+            string query = "UPDATE client SET paymentMethod='" + paymentMethod + "' WHERE clientID = '" + clientID + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        ////////////////////////////////////////////////END EZZ/////////////////////////////////////////////////////////////////////////
+
 
 
 
