@@ -1,12 +1,37 @@
+<<<<<<< HEAD
+C:\Users\TeeFa\Desktop\database-project\Gym-Database\GymSystem\bin\Debug\GymSystem.exe.config
+C:\Users\TeeFa\Desktop\database-project\Gym-Database\GymSystem\bin\Debug\GymSystem.exe
+C:\Users\TeeFa\Desktop\database-project\Gym-Database\GymSystem\bin\Debug\GymSystem.pdb
+C:\Users\TeeFa\Desktop\database-project\Gym-Database\GymSystem\obj\Debug\GymSystem.csproj.AssemblyReference.cache
+C:\Users\TeeFa\Desktop\database-project\Gym-Database\GymSystem\obj\Debug\GymSystem.Hire_Fire.resources
+C:\Users\TeeFa\Desktop\database-project\Gym-Database\GymSystem\obj\Debug\GymSystem.Properties.Resources.resources
+C:\Users\TeeFa\Desktop\database-project\Gym-Database\GymSystem\obj\Debug\GymSystem.csproj.GenerateResource.cache
+C:\Users\TeeFa\Desktop\database-project\Gym-Database\GymSystem\obj\Debug\GymSystem.csproj.CoreCompileInputs.cache
+C:\Users\TeeFa\Desktop\database-project\Gym-Database\GymSystem\obj\Debug\GymSystem.exe
+C:\Users\TeeFa\Desktop\database-project\Gym-Database\GymSystem\obj\Debug\GymSystem.pdb
+C:\Users\TeeFa\Desktop\database-project\Gym-Database\GymSystem\obj\Debug\GymSystem.Machines.resources
+C:\Users\TeeFa\Desktop\database-project\Gym-Database\GymSystem\obj\Debug\GymSystem.GymFacilities.resources
+C:\Users\TeeFa\Desktop\database-project\Gym-Database\GymSystem\obj\Debug\GymSystem.salaryManagment.resources
+C:\Users\TeeFa\Desktop\database-project\Gym-Database\GymSystem\obj\Debug\GymSystem.main_menu.resources
+=======
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\bin\Debug\GymSystem.exe.config
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\bin\Debug\GymSystem.exe
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\bin\Debug\GymSystem.pdb
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.AddMeasurement.resources
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.ClientAchievments.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.ClientMeasurements.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.HallOfFame.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.CourseLinks.resources
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.Properties.Resources.resources
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.SubscribtionDetails.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.TrainerClientList.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.TrainerProfile.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.TrainerWelcome.resources
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.csproj.GenerateResource.cache
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.csproj.CoreCompileInputs.cache
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.exe
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.pdb
 C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.csproj.AssemblyReference.cache
-C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.HallOfFame.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.ClientFoodMeasurements.resources
+C:\Users\Zaka\Desktop\Courses\Database\project\phase 3\GymDatabase\GymSystem\obj\Debug\GymSystem.AddFoodMeasurement.resources
+>>>>>>> main

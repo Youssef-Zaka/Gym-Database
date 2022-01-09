@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddFoodMeasurement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddFoodMeasurement.Designer.cs">
+      <DependentUpon>AddFoodMeasurement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddMeasurement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMeasurement.Designer.cs">
+      <DependentUpon>AddMeasurement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Auth.cs" />
     <Compile Include="ClientAchievments.cs">
       <SubType>Form</SubType>
@@ -53,7 +65,25 @@
     <Compile Include="ClientAchievments.Designer.cs">
       <DependentUpon>ClientAchievments.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientFoodMeasurements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientFoodMeasurements.Designer.cs">
+      <DependentUpon>ClientFoodMeasurements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientMeasurements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientMeasurements.Designer.cs">
+      <DependentUpon>ClientMeasurements.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller.cs" />
+    <Compile Include="CourseLinks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CourseLinks.Designer.cs">
+      <DependentUpon>CourseLinks.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBManager.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -61,6 +91,54 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+    <Compile Include="Hire_Fire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hire_Fire.Designer.cs">
+      <DependentUpon>Hire_Fire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Machines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Machines.Designer.cs">
+      <DependentUpon>Machines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GymFacilities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GymFacilities.Designer.cs">
+      <DependentUpon>GymFacilities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salaryManagment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salaryManagment.Designer.cs">
+      <DependentUpon>salaryManagment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main_menu.Designer.cs">
+      <DependentUpon>main_menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Hire_Fire.resx">
+      <DependentUpon>Hire_Fire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Machines.resx">
+      <DependentUpon>Machines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GymFacilities.resx">
+      <DependentUpon>GymFacilities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salaryManagment.resx">
+      <DependentUpon>salaryManagment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main_menu.resx">
+      <DependentUpon>main_menu.cs</DependentUpon>
+=======
     <Compile Include="HallOfFame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,11 +153,45 @@
     <Compile Include="SubscribtionDetails.Designer.cs">
       <DependentUpon>SubscribtionDetails.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddFoodMeasurement.resx">
+      <DependentUpon>AddFoodMeasurement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMeasurement.resx">
+      <DependentUpon>AddMeasurement.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="TrainerClientList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainerClientList.Designer.cs">
+      <DependentUpon>TrainerClientList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrainerProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainerProfile.Designer.cs">
+      <DependentUpon>TrainerProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrainerWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainerWelcome.Designer.cs">
+      <DependentUpon>TrainerWelcome.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ClientAchievments.resx">
       <DependentUpon>ClientAchievments.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClientFoodMeasurements.resx">
+      <DependentUpon>ClientFoodMeasurements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientMeasurements.resx">
+      <DependentUpon>ClientMeasurements.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HallOfFame.resx">
       <DependentUpon>HallOfFame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CourseLinks.resx">
+      <DependentUpon>CourseLinks.cs</DependentUpon>
+>>>>>>> main
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -89,9 +201,19 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SubscribtionDetails.resx">
       <DependentUpon>SubscribtionDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainerClientList.resx">
+      <DependentUpon>TrainerClientList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainerProfile.resx">
+      <DependentUpon>TrainerProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainerWelcome.resx">
+      <DependentUpon>TrainerWelcome.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -105,6 +227,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinepngtools %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Close-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
