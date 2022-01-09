@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
-using System.Windows.Forms;
 
 namespace GymSystem
 {
@@ -16,8 +12,14 @@ namespace GymSystem
             dbMan = new DBManager();
         }
 
+        public int InsertTrainer(long trainerssn, string firstname, string lastName, string sex, string trainerdate, long phone, string link, int salary, string address, string description)
+
         public DataTable SelectSubscriptionDetails(int ClientID)
         {
+            string query = "INSERT INTO trainer (trainerSSN, fName, lName, sex, bDate ,phoneNum, courseLinks, salary, trainerAddress ,describtion) " +
+                            "Values ('" + trainerssn + "','" + firstname + "','" + lastName + "','" + sex + "','" + Convert.ToDateTime(trainerdate) + "','" + phone + "','" + link + "','" + salary + "','" + address + "','" + description + "')";
+
+            return dbMan.ExecuteNonQuery(query);
             string query = "Select * FROM subscription,subcribed_In Where clientID = " + ClientID + " AND subscription.subscriptionID = subcribed_In.subscriptionID";
             return dbMan.ExecuteReader(query);
         }
@@ -115,6 +117,11 @@ namespace GymSystem
                             "Values ('" + snum + "','" + sname + "','" + city + "'," + status + ");";
             return dbMan.ExecuteNonQuery(query);
         }
+        public DataTable Selectmachineid()
+        {
+            string query = "SELECT machineID FROM machine;";
+            return dbMan.ExecuteReader(query);
+        }
 
         
         public int DeleteSupplier(string snum)
@@ -134,7 +141,7 @@ namespace GymSystem
 
         public DataTable SelectAllSuppliers()
         {
-            string query = "SELECT * FROM S;";
+            string query = "SELECT className FROM classes;";
             return dbMan.ExecuteReader(query);
         }
         
@@ -142,13 +149,52 @@ namespace GymSystem
    
         public int CountEmployees(string ProjNum)
         {
-            string query = "SELECT COUNT(Essn) FROM Works_On WHERE Pno =" + ProjNum + ";";
-            return (int)dbMan.ExecuteScalar(query);
+            string query = "SELECT facilityName FROM facility;";
+            return dbMan.ExecuteReader(query);
         }
 
+        public int deleteservice(string servicename)
+        {
+            string query = "DELETE FROM facility WHERE facilityName='" + servicename + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable showstrainersinfo()
+        {
+            string query = "SELECT trainerSSN,fName,lName,salary FROM trainer;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable showsreceptioninfo()
+        {
+            string query = "SELECT rSSN,fName,lName,salary FROM receptionist;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable showtrainerSSN()
+        {
+            string query = "SELECT trainerSSN FROM trainer;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable showreceptionSSN()
+        {
+            string query = "SELECT rSSN FROM receptionist;";
+            return dbMan.ExecuteReader(query);
+        }
+        public int Updateclass(string classname , string classdate ,int classcost ,int classfreq)
+        {
+            string query = "UPDATE classes SET startdate='" + Convert.ToDateTime(classdate) + "', monthlyCost= + '" + classcost + "',sessionFrequency= + '" + classfreq + "'WHERE className='" + classname + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int Updateservice(string facilityname, int mCost, string lastM, int mFrequency)
+        {
+            string query = "UPDATE facility SET mCost='" + mCost + "', lastM= + '" + Convert.ToDateTime(lastM) + "',mFrequency= + '" + mFrequency + "'WHERE facilityName='" + facilityname + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
         public void TerminateConnection()
         {
             dbMan.CloseConnection();
         }
     }
 }
+

@@ -97,6 +97,36 @@
     <Compile Include="HallOfFame.Designer.cs">
       <DependentUpon>HallOfFame.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hire_Fire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hire_Fire.Designer.cs">
+      <DependentUpon>Hire_Fire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Machines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Machines.Designer.cs">
+      <DependentUpon>Machines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GymFacilities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GymFacilities.Designer.cs">
+      <DependentUpon>GymFacilities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salaryManagment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salaryManagment.Designer.cs">
+      <DependentUpon>salaryManagment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main_menu.Designer.cs">
+      <DependentUpon>main_menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubscribtionDetails.cs">
@@ -144,6 +174,21 @@
     <EmbeddedResource Include="CourseLinks.resx">
       <DependentUpon>CourseLinks.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Hire_Fire.resx">
+      <DependentUpon>Hire_Fire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Machines.resx">
+      <DependentUpon>Machines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GymFacilities.resx">
+      <DependentUpon>GymFacilities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salaryManagment.resx">
+      <DependentUpon>salaryManagment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main_menu.resx">
+      <DependentUpon>main_menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -152,6 +197,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SubscribtionDetails.resx">
       <DependentUpon>SubscribtionDetails.cs</DependentUpon>
@@ -177,6 +223,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinepngtools %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Close-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
