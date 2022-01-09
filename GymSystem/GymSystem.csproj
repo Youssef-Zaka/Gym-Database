@@ -109,6 +109,12 @@
       <DependentUpon>CourseLinks.cs</DependentUpon>
     </Compile>
     <Compile Include="DBManager.cs" />
+    <Compile Include="forgotPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forgotPass.Designer.cs">
+      <DependentUpon>forgotPass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClientWorkouts.resx">
       <DependentUpon>ClientWorkouts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forgotPass.resx">
+      <DependentUpon>forgotPass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HallOfFame.resx">
       <DependentUpon>HallOfFame.cs</DependentUpon>

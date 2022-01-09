@@ -31,6 +31,18 @@ namespace GymSystem
             return dbMan.ExecuteReader(query);
         }
 
+        public DataTable SelectClient_Signup(int ClientID)
+        {
+            string query = "Select * FROM client, ClientProfiles WHERE client.clientID = " + ClientID + " AND client.clientID = ClientProfiles.clientID";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectClientPass(string ClientID)
+        {
+            string query = "Select ClientProfiles.pass FROM ClientProfiles WHERE ClientProfiles.clientID = " + ClientID ;
+            return dbMan.ExecuteReader(query);
+        }
+
         public DataTable SelectHallOfFame()
         {
             string query = "Select TOP(3)	client.fName, client.lName, " +
@@ -107,6 +119,23 @@ namespace GymSystem
 
 
         // ========================= ================================ =========================
+
+        public DataTable SelectReceptionist_Signup(string rSSN)
+        {
+            string query = $"Select * FROM receptionist, receptionistProfiles WHERE receptionist.rSSN = '{rSSN}' AND receptionistProfiles.rSSN = receptionist.rSSN;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectTrainer_Signup(string trainerSSN)
+        {
+            string query = $"Select * FROM trainer,TrainerProfiles WHERE trainer.trainerSSN = '{trainerSSN}' AND TrainerProfiles.trainerSSN  = trainer.trainerSSN ;";
+            return dbMan.ExecuteReader(query);
+        }
+
+
+       
+
+
         public int InsertTrainer(long trainerssn, string firstname, string lastName, string sex, string trainerdate, long phone, string link, int salary, string address, string description)
 
         {
@@ -130,6 +159,34 @@ namespace GymSystem
             string query = "SELECT trainerSSN FROM trainer;";
             return dbMan.ExecuteReader(query);
         }
+
+        public int SignUpClient(int ClientID, string UserName, string Pass)
+
+        {
+            string query = "INSERT INTO ClientProfiles (clientID,userName,pass)" +
+                            "Values (" + ClientID + ",'" + UserName + "','" + Pass + "')";
+
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int SignUpTrainer(string trainerSSN, string UserName, string Pass)
+
+        {
+            string query = "INSERT INTO TrainerProfiles (trainerSSN,userName,pass)" +
+                            "Values (" + trainerSSN + ",'" + UserName + "','" + Pass + "')";
+
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int SignUpReceptionist(string rSSN, string UserName, string Pass)
+
+        {
+            string query = "INSERT INTO receptionistProfiles (rSSN,userName,pass)" +
+                            "Values (" + rSSN + ",'" + UserName + "','" + Pass + "')";
+
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+
+
         public DataTable Selectreceptionist()
         {
             string query = "SELECT rSSN FROM receptionist;";

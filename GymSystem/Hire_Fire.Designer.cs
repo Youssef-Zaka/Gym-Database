@@ -164,7 +164,7 @@ namespace GymSystem
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(29, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 17);
+            this.label1.Size = new System.Drawing.Size(79, 16);
             this.label1.TabIndex = 11;
             this.label1.Text = "TrainerSSN";
             // 
@@ -173,7 +173,7 @@ namespace GymSystem
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(186, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 17);
+            this.label2.Size = new System.Drawing.Size(50, 16);
             this.label2.TabIndex = 12;
             this.label2.Text = "Fname";
             // 
@@ -182,7 +182,7 @@ namespace GymSystem
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(312, 36);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 17);
+            this.label3.Size = new System.Drawing.Size(49, 16);
             this.label3.TabIndex = 13;
             this.label3.Text = "Lname";
             // 
@@ -191,7 +191,7 @@ namespace GymSystem
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(563, 36);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 17);
+            this.label5.Size = new System.Drawing.Size(44, 16);
             this.label5.TabIndex = 15;
             this.label5.Text = "Bdate";
             // 
@@ -200,7 +200,7 @@ namespace GymSystem
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(73, 116);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 17);
+            this.label6.Size = new System.Drawing.Size(47, 16);
             this.label6.TabIndex = 16;
             this.label6.Text = "Phone";
             // 
@@ -209,7 +209,7 @@ namespace GymSystem
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(202, 116);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 17);
+            this.label7.Size = new System.Drawing.Size(32, 16);
             this.label7.TabIndex = 17;
             this.label7.Text = "Link";
             // 
@@ -218,7 +218,7 @@ namespace GymSystem
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(328, 116);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 17);
+            this.label8.Size = new System.Drawing.Size(47, 16);
             this.label8.TabIndex = 18;
             this.label8.Text = "Salary";
             // 
@@ -227,7 +227,7 @@ namespace GymSystem
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(447, 116);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 17);
+            this.label9.Size = new System.Drawing.Size(59, 16);
             this.label9.TabIndex = 19;
             this.label9.Text = "Address";
             // 
@@ -236,7 +236,7 @@ namespace GymSystem
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(555, 116);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(79, 17);
+            this.label10.Size = new System.Drawing.Size(76, 16);
             this.label10.TabIndex = 20;
             this.label10.Text = "Description";
             // 
@@ -245,7 +245,7 @@ namespace GymSystem
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(447, 371);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(60, 17);
+            this.label12.Size = new System.Drawing.Size(59, 16);
             this.label12.TabIndex = 39;
             this.label12.Text = "Address";
             // 
@@ -254,7 +254,7 @@ namespace GymSystem
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(328, 371);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(48, 17);
+            this.label13.Size = new System.Drawing.Size(47, 16);
             this.label13.TabIndex = 38;
             this.label13.Text = "Salary";
             // 
@@ -263,7 +263,7 @@ namespace GymSystem
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(202, 371);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(34, 17);
+            this.label14.Size = new System.Drawing.Size(32, 16);
             this.label14.TabIndex = 37;
             this.label14.Text = "Link";
             // 
@@ -272,7 +272,7 @@ namespace GymSystem
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(63, 371);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(49, 17);
+            this.label15.Size = new System.Drawing.Size(47, 16);
             this.label15.TabIndex = 36;
             this.label15.Text = "Phone";
             // 
@@ -281,7 +281,7 @@ namespace GymSystem
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(459, 275);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(45, 17);
+            this.label16.Size = new System.Drawing.Size(44, 16);
             this.label16.TabIndex = 35;
             this.label16.Text = "Bdate";
             // 
@@ -290,7 +290,7 @@ namespace GymSystem
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(328, 278);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(51, 17);
+            this.label18.Size = new System.Drawing.Size(49, 16);
             this.label18.TabIndex = 33;
             this.label18.Text = "Lname";
             // 
@@ -299,7 +299,7 @@ namespace GymSystem
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(202, 275);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(51, 17);
+            this.label19.Size = new System.Drawing.Size(50, 16);
             this.label19.TabIndex = 32;
             this.label19.Text = "Fname";
             // 
@@ -308,7 +308,7 @@ namespace GymSystem
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(35, 275);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(100, 17);
+            this.label20.Size = new System.Drawing.Size(98, 16);
             this.label20.TabIndex = 31;
             this.label20.Text = "ReceptionSSN";
             // 
@@ -399,7 +399,7 @@ namespace GymSystem
             this.receptioncombo.FormattingEnabled = true;
             this.receptioncombo.Location = new System.Drawing.Point(190, 276);
             this.receptioncombo.Name = "receptioncombo";
-            this.receptioncombo.Size = new System.Drawing.Size(186, 24);
+            this.receptioncombo.Size = new System.Drawing.Size(319, 24);
             this.receptioncombo.TabIndex = 8;
             // 
             // label21
@@ -407,7 +407,7 @@ namespace GymSystem
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(105, 128);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(82, 17);
+            this.label21.Size = new System.Drawing.Size(79, 16);
             this.label21.TabIndex = 7;
             this.label21.Text = "TrainerSSN";
             // 
@@ -417,7 +417,7 @@ namespace GymSystem
             this.trainercombo.FormattingEnabled = true;
             this.trainercombo.Location = new System.Drawing.Point(207, 128);
             this.trainercombo.Name = "trainercombo";
-            this.trainercombo.Size = new System.Drawing.Size(186, 24);
+            this.trainercombo.Size = new System.Drawing.Size(302, 24);
             this.trainercombo.TabIndex = 6;
             this.trainercombo.SelectedIndexChanged += new System.EventHandler(this.trainercombo_SelectedIndexChanged_1);
             // 
@@ -446,7 +446,7 @@ namespace GymSystem
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(86, 276);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(86, 17);
+            this.label22.Size = new System.Drawing.Size(83, 16);
             this.label22.TabIndex = 3;
             this.label22.Text = "Receptionist";
             // 
@@ -469,7 +469,7 @@ namespace GymSystem
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(563, 367);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 17);
+            this.label11.Size = new System.Drawing.Size(68, 16);
             this.label11.TabIndex = 40;
             this.label11.Text = "Time-Shift";
             // 
@@ -514,7 +514,7 @@ namespace GymSystem
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(438, 36);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 17);
+            this.label4.Size = new System.Drawing.Size(31, 16);
             this.label4.TabIndex = 52;
             this.label4.Text = "Sex";
             // 
@@ -523,7 +523,7 @@ namespace GymSystem
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(689, 274);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(31, 17);
+            this.label17.Size = new System.Drawing.Size(31, 16);
             this.label17.TabIndex = 53;
             this.label17.Text = "Sex";
             // 
@@ -606,6 +606,7 @@ namespace GymSystem
             this.Controls.Add(this.HireTrainer);
             this.Name = "Hire_Fire";
             this.Text = "Hire_Fire";
+            this.Load += new System.EventHandler(this.Hire_Fire_Load);
             this.Firebox.ResumeLayout(false);
             this.Firebox.PerformLayout();
             this.ResumeLayout(false);

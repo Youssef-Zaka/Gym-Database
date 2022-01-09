@@ -1,3 +1,6 @@
+EXEC sp_changedbowner 'sa'
+
+
 CREATE DATABASE Gym
 GO 
 USE Gym
@@ -576,5 +579,7 @@ INSERT Rbonus (rSSN, rbonus)
 VALUES (20106160111279, 400)
 INSERT Rbonus (rSSN, rbonus)
 VALUES (20106170100179, 500)
+
+
 
 

@@ -18,12 +18,14 @@ namespace GymSystem
         {
             InitializeComponent();
             controllerObj = new Controller();
-            DataTable dt = controllerObj.Selecttrainer();
+            DataTable dt = controllerObj.showstrainersinfo();
+            dt.Columns.Add("SSN_FULL_NAME", typeof(string), " trainerSSN + '     ' + fName + ' ' + lName");
             trainercombo.DataSource = dt;
-            trainercombo.DisplayMember = "trainerSSN";
-            DataTable dt2 = controllerObj.Selectreceptionist();
+            trainercombo.DisplayMember = "SSN_FULL_NAME";
+            DataTable dt2 = controllerObj.showsreceptioninfo();
+            dt2.Columns.Add("SSN_FULL_NAME", typeof(string), " rSSN + '     ' + fName + ' ' + lName");
             receptioncombo.DataSource = dt2;
-            receptioncombo.DisplayMember = "rSSN";
+            receptioncombo.DisplayMember = "SSN_FULL_NAME";
          
         }
 
@@ -213,7 +215,13 @@ namespace GymSystem
 
         private void firetrainer_Click(object sender, EventArgs e)
         {
-            int result = controllerObj.deletatrainer(long.Parse(trainercombo.Text.ToString()));
+            string str = trainercombo.Text.ToString();
+            int index = str.IndexOf(' ');
+            index = str.IndexOf(' ', index + 1);
+            string resultS  = str.Substring(0, index);
+
+
+            int result = controllerObj.deletatrainer(long.Parse(resultS));
             if (result == 0)
             {
                 MessageBox.Show("Invalid Delete");
@@ -252,6 +260,11 @@ namespace GymSystem
         private void exitbutton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Hire_Fire_Load(object sender, EventArgs e)
+        {
+
         }
     }
     

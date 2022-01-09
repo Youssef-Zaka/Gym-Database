@@ -35,6 +35,13 @@ namespace GymSystem
             this.Password = new System.Windows.Forms.Label();
             this.UserText = new System.Windows.Forms.TextBox();
             this.Username = new System.Windows.Forms.Label();
+            this.SignUpButton = new System.Windows.Forms.Button();
+            this.IDTEXT = new System.Windows.Forms.TextBox();
+            this.IDLABEL = new System.Windows.Forms.Label();
+            this.ClientRadio = new System.Windows.Forms.RadioButton();
+            this.TrainerRadio = new System.Windows.Forms.RadioButton();
+            this.ReceptionistRadio = new System.Windows.Forms.RadioButton();
+            this.ForgotPassButton = new System.Windows.Forms.Button();
             this.exitbutton = new System.Windows.Forms.Button();
             this.ClientAchievmentsGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -46,6 +53,13 @@ namespace GymSystem
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ClientAchievmentsGroupBox.AutoSize = true;
             this.ClientAchievmentsGroupBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientAchievmentsGroupBox.Controls.Add(this.ForgotPassButton);
+            this.ClientAchievmentsGroupBox.Controls.Add(this.ReceptionistRadio);
+            this.ClientAchievmentsGroupBox.Controls.Add(this.TrainerRadio);
+            this.ClientAchievmentsGroupBox.Controls.Add(this.ClientRadio);
+            this.ClientAchievmentsGroupBox.Controls.Add(this.IDLABEL);
+            this.ClientAchievmentsGroupBox.Controls.Add(this.IDTEXT);
+            this.ClientAchievmentsGroupBox.Controls.Add(this.SignUpButton);
             this.ClientAchievmentsGroupBox.Controls.Add(this.exitbutton);
             this.ClientAchievmentsGroupBox.Controls.Add(this.loginButton);
             this.ClientAchievmentsGroupBox.Controls.Add(this.PassText);
@@ -76,6 +90,7 @@ namespace GymSystem
             this.PassText.Name = "PassText";
             this.PassText.Size = new System.Drawing.Size(248, 22);
             this.PassText.TabIndex = 3;
+            this.PassText.UseSystemPasswordChar = true;
             // 
             // Password
             // 
@@ -102,6 +117,79 @@ namespace GymSystem
             this.Username.TabIndex = 0;
             this.Username.Text = "User Name";
             // 
+            // SignUpButton
+            // 
+            this.SignUpButton.Location = new System.Drawing.Point(354, 341);
+            this.SignUpButton.Name = "SignUpButton";
+            this.SignUpButton.Size = new System.Drawing.Size(112, 42);
+            this.SignUpButton.TabIndex = 65;
+            this.SignUpButton.Text = "SignUp";
+            this.SignUpButton.UseVisualStyleBackColor = true;
+            this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
+            // 
+            // IDTEXT
+            // 
+            this.IDTEXT.Location = new System.Drawing.Point(218, 361);
+            this.IDTEXT.Name = "IDTEXT";
+            this.IDTEXT.Size = new System.Drawing.Size(115, 22);
+            this.IDTEXT.TabIndex = 66;
+            // 
+            // IDLABEL
+            // 
+            this.IDLABEL.AutoSize = true;
+            this.IDLABEL.Location = new System.Drawing.Point(215, 341);
+            this.IDLABEL.Name = "IDLABEL";
+            this.IDLABEL.Size = new System.Drawing.Size(21, 16);
+            this.IDLABEL.TabIndex = 67;
+            this.IDLABEL.Text = "ID";
+            this.IDLABEL.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // ClientRadio
+            // 
+            this.ClientRadio.AutoSize = true;
+            this.ClientRadio.Location = new System.Drawing.Point(40, 320);
+            this.ClientRadio.Name = "ClientRadio";
+            this.ClientRadio.Size = new System.Drawing.Size(59, 20);
+            this.ClientRadio.TabIndex = 8;
+            this.ClientRadio.TabStop = true;
+            this.ClientRadio.Text = "Client";
+            this.ClientRadio.UseVisualStyleBackColor = true;
+            this.ClientRadio.CheckedChanged += new System.EventHandler(this.ClientRadio_CheckedChanged);
+            // 
+            // TrainerRadio
+            // 
+            this.TrainerRadio.AutoSize = true;
+            this.TrainerRadio.Location = new System.Drawing.Point(40, 352);
+            this.TrainerRadio.Name = "TrainerRadio";
+            this.TrainerRadio.Size = new System.Drawing.Size(69, 20);
+            this.TrainerRadio.TabIndex = 68;
+            this.TrainerRadio.TabStop = true;
+            this.TrainerRadio.Text = "Trainer";
+            this.TrainerRadio.UseVisualStyleBackColor = true;
+            this.TrainerRadio.CheckedChanged += new System.EventHandler(this.TrainerRadio_CheckedChanged);
+            // 
+            // ReceptionistRadio
+            // 
+            this.ReceptionistRadio.AutoSize = true;
+            this.ReceptionistRadio.Location = new System.Drawing.Point(40, 378);
+            this.ReceptionistRadio.Name = "ReceptionistRadio";
+            this.ReceptionistRadio.Size = new System.Drawing.Size(101, 20);
+            this.ReceptionistRadio.TabIndex = 69;
+            this.ReceptionistRadio.TabStop = true;
+            this.ReceptionistRadio.Text = "Receptionist";
+            this.ReceptionistRadio.UseVisualStyleBackColor = true;
+            this.ReceptionistRadio.CheckedChanged += new System.EventHandler(this.ReceptionistRadio_CheckedChanged);
+            // 
+            // ForgotPassButton
+            // 
+            this.ForgotPassButton.Location = new System.Drawing.Point(218, 273);
+            this.ForgotPassButton.Name = "ForgotPassButton";
+            this.ForgotPassButton.Size = new System.Drawing.Size(248, 23);
+            this.ForgotPassButton.TabIndex = 70;
+            this.ForgotPassButton.Text = "Forgot Password?";
+            this.ForgotPassButton.UseVisualStyleBackColor = true;
+            this.ForgotPassButton.Click += new System.EventHandler(this.ForgotPassButton_Click);
+            // 
             // exitbutton
             // 
             this.exitbutton.FlatAppearance.BorderSize = 0;
@@ -123,6 +211,7 @@ namespace GymSystem
             this.Controls.Add(this.ClientAchievmentsGroupBox);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ClientAchievmentsGroupBox.ResumeLayout(false);
             this.ClientAchievmentsGroupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -139,5 +228,12 @@ namespace GymSystem
         private System.Windows.Forms.TextBox UserText;
         private System.Windows.Forms.Label Username;
         private System.Windows.Forms.Button exitbutton;
+        private System.Windows.Forms.Button SignUpButton;
+        private System.Windows.Forms.Label IDLABEL;
+        private System.Windows.Forms.TextBox IDTEXT;
+        private System.Windows.Forms.RadioButton ReceptionistRadio;
+        private System.Windows.Forms.RadioButton TrainerRadio;
+        private System.Windows.Forms.RadioButton ClientRadio;
+        private System.Windows.Forms.Button ForgotPassButton;
     }
 }
