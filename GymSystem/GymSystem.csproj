@@ -65,6 +65,12 @@
     <Compile Include="ClientAchievments.Designer.cs">
       <DependentUpon>ClientAchievments.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientFacilitiesSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientFacilitiesSchedule.Designer.cs">
+      <DependentUpon>ClientFacilitiesSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientFoodMeasurements.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,18 @@
     </Compile>
     <Compile Include="ClientMeasurements.Designer.cs">
       <DependentUpon>ClientMeasurements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientSchedule.Designer.cs">
+      <DependentUpon>ClientSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientWorkouts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientWorkouts.Designer.cs">
+      <DependentUpon>ClientWorkouts.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="CourseLinks.cs">
@@ -162,11 +180,20 @@
     <EmbeddedResource Include="ClientAchievments.resx">
       <DependentUpon>ClientAchievments.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClientFacilitiesSchedule.resx">
+      <DependentUpon>ClientFacilitiesSchedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientFoodMeasurements.resx">
       <DependentUpon>ClientFoodMeasurements.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClientMeasurements.resx">
       <DependentUpon>ClientMeasurements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientSchedule.resx">
+      <DependentUpon>ClientSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientWorkouts.resx">
+      <DependentUpon>ClientWorkouts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HallOfFame.resx">
       <DependentUpon>HallOfFame.cs</DependentUpon>

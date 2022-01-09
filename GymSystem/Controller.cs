@@ -193,6 +193,12 @@ namespace GymSystem
             return dbMan.ExecuteReader(query);
         }
 
+        public DataTable SelectclassForClients()
+        {
+            string query = "Select className, monthlyCost, sessionFrequency from classes";
+            return dbMan.ExecuteReader(query);
+        }
+
         public int Insertservice(string facilityName, int mcost, string lastmaintenance, int maintenancefreq)
         {
             string query = "INSERT INTO facility (facilityName, mCost, lastM, mFrequency) " +
@@ -243,6 +249,27 @@ namespace GymSystem
             string query = "UPDATE classes SET startdate='" + Convert.ToDateTime(classdate) + "', monthlyCost= + '" + classcost + "',sessionFrequency= + '" + classfreq + "'WHERE className='" + classname + "';";
             return dbMan.ExecuteNonQuery(query);
         }
+        public DataTable SelectPrivateWorkoutSchedule(int Id)
+        {
+            string query = "Select trainer.fName as NameOfTrainer, trains.trainingDate  as trainingDate , trains.trainingTimeSlot as trainingTimeSlot, workout.workoutType as Workout "
+                            + "from trains , trainer, workout where trains.clientID = " + Id + " AND trainer.trainerSSN = trains.trainerSSN AND workout.workoutID = trains.tWorkout";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectWorkouts(int Id)
+        {
+            string query = "SELECT workoutType FROM workout ;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectExcerciseInWorkout(string WorkoutType)
+        {
+            string query = "Select excersise.exName, excersise.duration, excersise.exDescription From workout , excersise, contain where workout.workoutType = '"
+                            + WorkoutType + "' AND workout.workoutID = contain.workoutID AND excersise.excersiseID = contain.excersiseID";
+            return dbMan.ExecuteReader(query);
+        }
+
+
 
         public int Updateservice(string facilityname, int mCost, string lastM, int mFrequency)
         {

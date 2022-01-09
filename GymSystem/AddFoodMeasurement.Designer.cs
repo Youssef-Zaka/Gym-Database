@@ -30,6 +30,8 @@ namespace GymSystem
         private void InitializeComponent()
         {
             this.ClientAchievmentsGroupBox = new System.Windows.Forms.GroupBox();
+            this.Water = new System.Windows.Forms.Label();
+            this.WaterTrackbar = new System.Windows.Forms.TrackBar();
             this.AddMeasurementButton = new System.Windows.Forms.Button();
             this.Hours = new System.Windows.Forms.Label();
             this.HoursTrackbar = new System.Windows.Forms.TrackBar();
@@ -38,12 +40,10 @@ namespace GymSystem
             this.waterLabel = new System.Windows.Forms.Label();
             this.SleepLabel = new System.Windows.Forms.Label();
             this.CalloriesLabel = new System.Windows.Forms.Label();
-            this.WaterTrackbar = new System.Windows.Forms.TrackBar();
-            this.Water = new System.Windows.Forms.Label();
             this.ClientAchievmentsGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WaterTrackbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HoursTrackbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CalTrackBar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WaterTrackbar)).BeginInit();
             this.SuspendLayout();
             // 
             // ClientAchievmentsGroupBox
@@ -70,6 +70,29 @@ namespace GymSystem
             this.ClientAchievmentsGroupBox.Size = new System.Drawing.Size(1077, 510);
             this.ClientAchievmentsGroupBox.TabIndex = 6;
             this.ClientAchievmentsGroupBox.TabStop = false;
+            // 
+            // Water
+            // 
+            this.Water.AutoSize = true;
+            this.Water.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Water.Location = new System.Drawing.Point(30, 368);
+            this.Water.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Water.Name = "Water";
+            this.Water.Size = new System.Drawing.Size(65, 25);
+            this.Water.TabIndex = 9;
+            this.Water.Text = "Water";
+            // 
+            // WaterTrackbar
+            // 
+            this.WaterTrackbar.BackColor = System.Drawing.SystemColors.Info;
+            this.WaterTrackbar.Location = new System.Drawing.Point(247, 337);
+            this.WaterTrackbar.Margin = new System.Windows.Forms.Padding(4);
+            this.WaterTrackbar.Maximum = 30;
+            this.WaterTrackbar.Name = "WaterTrackbar";
+            this.WaterTrackbar.Size = new System.Drawing.Size(770, 56);
+            this.WaterTrackbar.TabIndex = 8;
+            this.WaterTrackbar.Value = 10;
+            this.WaterTrackbar.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // AddMeasurementButton
             // 
@@ -163,29 +186,6 @@ namespace GymSystem
             this.CalloriesLabel.TabIndex = 1;
             this.CalloriesLabel.Text = "Callories";
             // 
-            // WaterTrackbar
-            // 
-            this.WaterTrackbar.BackColor = System.Drawing.SystemColors.Info;
-            this.WaterTrackbar.Location = new System.Drawing.Point(247, 337);
-            this.WaterTrackbar.Margin = new System.Windows.Forms.Padding(4);
-            this.WaterTrackbar.Maximum = 30;
-            this.WaterTrackbar.Name = "WaterTrackbar";
-            this.WaterTrackbar.Size = new System.Drawing.Size(770, 56);
-            this.WaterTrackbar.TabIndex = 8;
-            this.WaterTrackbar.Value = 10;
-            this.WaterTrackbar.Scroll += new System.EventHandler(this.trackBar1_Scroll);
-            // 
-            // Water
-            // 
-            this.Water.AutoSize = true;
-            this.Water.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Water.Location = new System.Drawing.Point(30, 368);
-            this.Water.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Water.Name = "Water";
-            this.Water.Size = new System.Drawing.Size(65, 25);
-            this.Water.TabIndex = 9;
-            this.Water.Text = "Water";
-            // 
             // AddFoodMeasurement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -198,9 +198,9 @@ namespace GymSystem
             this.Load += new System.EventHandler(this.AddFoodMeasurement_Load);
             this.ClientAchievmentsGroupBox.ResumeLayout(false);
             this.ClientAchievmentsGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WaterTrackbar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HoursTrackbar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CalTrackBar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WaterTrackbar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
