@@ -210,6 +210,18 @@ CREATE TABLE foodMeasurement
 	numCups int,
 	FOREIGN KEY (clientID) REFERENCES client,
 )
+----------------------------------- client Insersion -------------------------------------------------
+INSERT client (clientID, fName, lName,bDate,phoneNum,clientAddress, startDate,paymentMethod, invitationNum)
+VALUES (1, 'Youssef', 'Zakaria', '1/10/2000', '01064504003', '36 el jabal october', '10/10/2020', 'cash', 3)
+INSERT client (clientID, fName, lName,bDate,phoneNum,clientAddress, startDate,paymentMethod, invitationNum)
+values (2, 'Ahmed', 'Mostafa', '1/12/2003', '01245678910', '12, el harm street', '12/7/2021', 'card', 2)
+INSERT client (clientID, fName, lName,bDate,phoneNum,clientAddress, startDate,paymentMethod, invitationNum)
+values (3, 'Mohamed', 'Ahmed', '2/12/1999', '01223456789', '14 el bostan street', '12/12/2019', 'cash', 5)
+INSERT client (clientID, fName, lName,bDate,phoneNum,clientAddress, startDate,paymentMethod, invitationNum)
+values (4, 'Kareem', 'Medhat', '2/3/2001',	'01044432221', '25 , 47 street, zayed', '3/5/2018', 'cash', 7)
+INSERT client (clientID, fName, lName,bDate,phoneNum,clientAddress, startDate,paymentMethod, invitationNum)
+values (5, 'Zeyad', 'Saleh', '11/11/2002', '01064523232', '36 el ashgar', '1/1/2022', 'card', 1)
+
 
 ----------------------------------- food Insersion -------------------------------------------------
 SET IDENTITY_INSERT foodMeasurement ON
@@ -228,17 +240,6 @@ Values (6,5,'6/6/2021' ,2000, 9,  12)
 SET IDENTITY_INSERT foodMeasurement OFF
 
 
------------------------------------ client Insersion -------------------------------------------------
-INSERT client (clientID, fName, lName,bDate,phoneNum,clientAddress, startDate,paymentMethod, invitationNum)
-VALUES (1, 'Youssef', 'Zakaria', '1/10/2000', '01064504003', '36 el jabal october', '10/10/2020', 'cash', 3)
-INSERT client (clientID, fName, lName,bDate,phoneNum,clientAddress, startDate,paymentMethod, invitationNum)
-values (2, 'Ahmed', 'Mostafa', '1/12/2003', '01245678910', '12, el harm street', '12/7/2021', 'card', 2)
-INSERT client (clientID, fName, lName,bDate,phoneNum,clientAddress, startDate,paymentMethod, invitationNum)
-values (3, 'Mohamed', 'Ahmed', '2/12/1999', '01223456789', '14 el bostan street', '12/12/2019', 'cash', 5)
-INSERT client (clientID, fName, lName,bDate,phoneNum,clientAddress, startDate,paymentMethod, invitationNum)
-values (4, 'Kareem', 'Medhat', '2/3/2001',	'01044432221', '25 , 47 street, zayed', '3/5/2018', 'cash', 7)
-INSERT client (clientID, fName, lName,bDate,phoneNum,clientAddress, startDate,paymentMethod, invitationNum)
-values (5, 'Zeyad', 'Saleh', '11/11/2002', '01064523232', '36 el ashgar', '1/1/2022', 'card', 1)
 
 ----------------------------------- subscription Insersion -------------------------------------------------
 INSERT subscription (subscriptionID, cost,duration,subType)
