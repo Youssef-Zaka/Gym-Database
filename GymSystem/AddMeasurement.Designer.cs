@@ -30,6 +30,8 @@ namespace GymSystem
         private void InitializeComponent()
         {
             this.ClientAchievmentsGroupBox = new System.Windows.Forms.GroupBox();
+            this.AddMeasurementButton = new System.Windows.Forms.Button();
+            this.BodyTypeComboBox = new System.Windows.Forms.ComboBox();
             this.Height = new System.Windows.Forms.Label();
             this.HeightTrackbar = new System.Windows.Forms.TrackBar();
             this.Weight = new System.Windows.Forms.Label();
@@ -37,8 +39,8 @@ namespace GymSystem
             this.BodyTypeLabel = new System.Windows.Forms.Label();
             this.HeightLabel = new System.Windows.Forms.Label();
             this.WeightLabel = new System.Windows.Forms.Label();
-            this.BodyTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.AddMeasurementButton = new System.Windows.Forms.Button();
+            this.backbutton = new System.Windows.Forms.Button();
+            this.exitbutton = new System.Windows.Forms.Button();
             this.ClientAchievmentsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HeightTrackbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WeightTrackBar)).BeginInit();
@@ -51,6 +53,8 @@ namespace GymSystem
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ClientAchievmentsGroupBox.AutoSize = true;
             this.ClientAchievmentsGroupBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientAchievmentsGroupBox.Controls.Add(this.backbutton);
+            this.ClientAchievmentsGroupBox.Controls.Add(this.exitbutton);
             this.ClientAchievmentsGroupBox.Controls.Add(this.AddMeasurementButton);
             this.ClientAchievmentsGroupBox.Controls.Add(this.BodyTypeComboBox);
             this.ClientAchievmentsGroupBox.Controls.Add(this.Height);
@@ -60,85 +64,25 @@ namespace GymSystem
             this.ClientAchievmentsGroupBox.Controls.Add(this.BodyTypeLabel);
             this.ClientAchievmentsGroupBox.Controls.Add(this.HeightLabel);
             this.ClientAchievmentsGroupBox.Controls.Add(this.WeightLabel);
-            this.ClientAchievmentsGroupBox.Location = new System.Drawing.Point(12, 12);
+            this.ClientAchievmentsGroupBox.Location = new System.Drawing.Point(16, 15);
+            this.ClientAchievmentsGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ClientAchievmentsGroupBox.Name = "ClientAchievmentsGroupBox";
-            this.ClientAchievmentsGroupBox.Size = new System.Drawing.Size(776, 426);
+            this.ClientAchievmentsGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClientAchievmentsGroupBox.Size = new System.Drawing.Size(1035, 524);
             this.ClientAchievmentsGroupBox.TabIndex = 5;
             this.ClientAchievmentsGroupBox.TabStop = false;
             // 
-            // Height
+            // AddMeasurementButton
             // 
-            this.Height.AutoSize = true;
-            this.Height.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Height.Location = new System.Drawing.Point(22, 205);
-            this.Height.Name = "Height";
-            this.Height.Size = new System.Drawing.Size(56, 20);
-            this.Height.TabIndex = 7;
-            this.Height.Text = "Height";
-            // 
-            // HeightTrackbar
-            // 
-            this.HeightTrackbar.BackColor = System.Drawing.SystemColors.Info;
-            this.HeightTrackbar.Location = new System.Drawing.Point(87, 180);
-            this.HeightTrackbar.Maximum = 250;
-            this.HeightTrackbar.Minimum = 100;
-            this.HeightTrackbar.Name = "HeightTrackbar";
-            this.HeightTrackbar.Size = new System.Drawing.Size(676, 45);
-            this.HeightTrackbar.TabIndex = 6;
-            this.HeightTrackbar.Value = 100;
-            this.HeightTrackbar.Scroll += new System.EventHandler(this.HeightTrackbar_Scroll);
-            // 
-            // Weight
-            // 
-            this.Weight.AutoSize = true;
-            this.Weight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Weight.Location = new System.Drawing.Point(22, 77);
-            this.Weight.Name = "Weight";
-            this.Weight.Size = new System.Drawing.Size(59, 20);
-            this.Weight.TabIndex = 5;
-            this.Weight.Text = "Weight";
-            // 
-            // WeightTrackBar
-            // 
-            this.WeightTrackBar.BackColor = System.Drawing.SystemColors.Info;
-            this.WeightTrackBar.Location = new System.Drawing.Point(87, 52);
-            this.WeightTrackBar.Maximum = 150;
-            this.WeightTrackBar.Minimum = 30;
-            this.WeightTrackBar.Name = "WeightTrackBar";
-            this.WeightTrackBar.Size = new System.Drawing.Size(676, 45);
-            this.WeightTrackBar.TabIndex = 4;
-            this.WeightTrackBar.Value = 30;
-            this.WeightTrackBar.Scroll += new System.EventHandler(this.WeightTrackBar_Scroll);
-            // 
-            // BodyTypeLabel
-            // 
-            this.BodyTypeLabel.AutoSize = true;
-            this.BodyTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BodyTypeLabel.Location = new System.Drawing.Point(22, 291);
-            this.BodyTypeLabel.Name = "BodyTypeLabel";
-            this.BodyTypeLabel.Size = new System.Drawing.Size(83, 20);
-            this.BodyTypeLabel.TabIndex = 3;
-            this.BodyTypeLabel.Text = "Body Type";
-            // 
-            // HeightLabel
-            // 
-            this.HeightLabel.AutoSize = true;
-            this.HeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HeightLabel.Location = new System.Drawing.Point(22, 180);
-            this.HeightLabel.Name = "HeightLabel";
-            this.HeightLabel.Size = new System.Drawing.Size(56, 20);
-            this.HeightLabel.TabIndex = 2;
-            this.HeightLabel.Text = "Height";
-            // 
-            // WeightLabel
-            // 
-            this.WeightLabel.AutoSize = true;
-            this.WeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WeightLabel.Location = new System.Drawing.Point(22, 52);
-            this.WeightLabel.Name = "WeightLabel";
-            this.WeightLabel.Size = new System.Drawing.Size(59, 20);
-            this.WeightLabel.TabIndex = 1;
-            this.WeightLabel.Text = "Weight";
+            this.AddMeasurementButton.BackColor = System.Drawing.SystemColors.Info;
+            this.AddMeasurementButton.Location = new System.Drawing.Point(35, 454);
+            this.AddMeasurementButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddMeasurementButton.Name = "AddMeasurementButton";
+            this.AddMeasurementButton.Size = new System.Drawing.Size(205, 28);
+            this.AddMeasurementButton.TabIndex = 6;
+            this.AddMeasurementButton.Text = "Add";
+            this.AddMeasurementButton.UseVisualStyleBackColor = false;
+            this.AddMeasurementButton.Click += new System.EventHandler(this.AddMeasurementButton_Click);
             // 
             // BodyTypeComboBox
             // 
@@ -148,30 +92,128 @@ namespace GymSystem
             "slim",
             "fit",
             "obese"});
-            this.BodyTypeComboBox.Location = new System.Drawing.Point(139, 293);
+            this.BodyTypeComboBox.Location = new System.Drawing.Point(185, 361);
+            this.BodyTypeComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BodyTypeComboBox.Name = "BodyTypeComboBox";
-            this.BodyTypeComboBox.Size = new System.Drawing.Size(164, 21);
+            this.BodyTypeComboBox.Size = new System.Drawing.Size(217, 24);
             this.BodyTypeComboBox.TabIndex = 8;
             this.BodyTypeComboBox.Text = "Choose Body Type";
             // 
-            // AddMeasurementButton
+            // Height
             // 
-            this.AddMeasurementButton.BackColor = System.Drawing.SystemColors.Info;
-            this.AddMeasurementButton.Location = new System.Drawing.Point(26, 369);
-            this.AddMeasurementButton.Name = "AddMeasurementButton";
-            this.AddMeasurementButton.Size = new System.Drawing.Size(154, 23);
-            this.AddMeasurementButton.TabIndex = 6;
-            this.AddMeasurementButton.Text = "Add";
-            this.AddMeasurementButton.UseVisualStyleBackColor = false;
-            this.AddMeasurementButton.Click += new System.EventHandler(this.AddMeasurementButton_Click);
+            this.Height.AutoSize = true;
+            this.Height.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Height.Location = new System.Drawing.Point(29, 252);
+            this.Height.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Height.Name = "Height";
+            this.Height.Size = new System.Drawing.Size(56, 20);
+            this.Height.TabIndex = 7;
+            this.Height.Text = "Height";
+            // 
+            // HeightTrackbar
+            // 
+            this.HeightTrackbar.BackColor = System.Drawing.SystemColors.Info;
+            this.HeightTrackbar.Location = new System.Drawing.Point(116, 222);
+            this.HeightTrackbar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HeightTrackbar.Maximum = 250;
+            this.HeightTrackbar.Minimum = 100;
+            this.HeightTrackbar.Name = "HeightTrackbar";
+            this.HeightTrackbar.Size = new System.Drawing.Size(901, 45);
+            this.HeightTrackbar.TabIndex = 6;
+            this.HeightTrackbar.Value = 100;
+            this.HeightTrackbar.Scroll += new System.EventHandler(this.HeightTrackbar_Scroll);
+            // 
+            // Weight
+            // 
+            this.Weight.AutoSize = true;
+            this.Weight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Weight.Location = new System.Drawing.Point(29, 95);
+            this.Weight.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Weight.Name = "Weight";
+            this.Weight.Size = new System.Drawing.Size(59, 20);
+            this.Weight.TabIndex = 5;
+            this.Weight.Text = "Weight";
+            // 
+            // WeightTrackBar
+            // 
+            this.WeightTrackBar.BackColor = System.Drawing.SystemColors.Info;
+            this.WeightTrackBar.Location = new System.Drawing.Point(116, 64);
+            this.WeightTrackBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.WeightTrackBar.Maximum = 150;
+            this.WeightTrackBar.Minimum = 30;
+            this.WeightTrackBar.Name = "WeightTrackBar";
+            this.WeightTrackBar.Size = new System.Drawing.Size(901, 45);
+            this.WeightTrackBar.TabIndex = 4;
+            this.WeightTrackBar.Value = 30;
+            this.WeightTrackBar.Scroll += new System.EventHandler(this.WeightTrackBar_Scroll);
+            // 
+            // BodyTypeLabel
+            // 
+            this.BodyTypeLabel.AutoSize = true;
+            this.BodyTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BodyTypeLabel.Location = new System.Drawing.Point(29, 358);
+            this.BodyTypeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.BodyTypeLabel.Name = "BodyTypeLabel";
+            this.BodyTypeLabel.Size = new System.Drawing.Size(83, 20);
+            this.BodyTypeLabel.TabIndex = 3;
+            this.BodyTypeLabel.Text = "Body Type";
+            // 
+            // HeightLabel
+            // 
+            this.HeightLabel.AutoSize = true;
+            this.HeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HeightLabel.Location = new System.Drawing.Point(29, 222);
+            this.HeightLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.HeightLabel.Name = "HeightLabel";
+            this.HeightLabel.Size = new System.Drawing.Size(56, 20);
+            this.HeightLabel.TabIndex = 2;
+            this.HeightLabel.Text = "Height";
+            // 
+            // WeightLabel
+            // 
+            this.WeightLabel.AutoSize = true;
+            this.WeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WeightLabel.Location = new System.Drawing.Point(29, 64);
+            this.WeightLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.WeightLabel.Name = "WeightLabel";
+            this.WeightLabel.Size = new System.Drawing.Size(59, 20);
+            this.WeightLabel.TabIndex = 1;
+            this.WeightLabel.Text = "Weight";
+            // 
+            // backbutton
+            // 
+            this.backbutton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.backbutton.FlatAppearance.BorderSize = 0;
+            this.backbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backbutton.Image = global::GymSystem.Properties.Resources.output_onlinepngtools__7_;
+            this.backbutton.Location = new System.Drawing.Point(774, 447);
+            this.backbutton.Name = "backbutton";
+            this.backbutton.Size = new System.Drawing.Size(111, 45);
+            this.backbutton.TabIndex = 61;
+            this.backbutton.UseCompatibleTextRendering = true;
+            this.backbutton.UseVisualStyleBackColor = false;
+            this.backbutton.Click += new System.EventHandler(this.backbutton_Click);
+            // 
+            // exitbutton
+            // 
+            this.exitbutton.FlatAppearance.BorderSize = 0;
+            this.exitbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitbutton.Image = global::GymSystem.Properties.Resources.Button_Close_icon;
+            this.exitbutton.Location = new System.Drawing.Point(891, 447);
+            this.exitbutton.Name = "exitbutton";
+            this.exitbutton.Size = new System.Drawing.Size(90, 43);
+            this.exitbutton.TabIndex = 60;
+            this.exitbutton.UseVisualStyleBackColor = true;
+            this.exitbutton.Click += new System.EventHandler(this.exitbutton_Click);
             // 
             // AddMeasurement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.ClientAchievmentsGroupBox);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddMeasurement";
             this.Text = "AddMeasurement";
             this.Load += new System.EventHandler(this.AddMeasurement_Load);
@@ -196,5 +238,7 @@ namespace GymSystem
         private System.Windows.Forms.Label Weight;
         private System.Windows.Forms.ComboBox BodyTypeComboBox;
         private System.Windows.Forms.Button AddMeasurementButton;
+        private System.Windows.Forms.Button backbutton;
+        private System.Windows.Forms.Button exitbutton;
     }
 }

@@ -20,6 +20,7 @@ namespace GymSystem
             }
         }
         private int Client_ID = 1;
+        private string SSN = "12345678912345";
         public int getClient_ID()
         {
             return this.Client_ID;
@@ -27,6 +28,15 @@ namespace GymSystem
         public void setClient_ID(int id)
         {
             this.Client_ID = id;
+        }
+
+        public string getSSN()
+        {
+            return this.SSN;
+        }
+        public void setSSN(string ssn)
+        {
+            this.SSN = ssn;
         }
     }
 

@@ -39,5 +39,22 @@ namespace GymSystem
             DataTable dt = controllerObj.SelectExcerciseInWorkout(WorkoutComboBox.Text);
             AllWorkoutsGrid.DataSource = dt;
         }
+
+        private void exitbutton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void backbutton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ClientSchedule().Show();
+        }
+
+        private void backbutton_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ClientWelcome().Show();
+        }
     }
 }

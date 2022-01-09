@@ -115,6 +115,7 @@ cWeight int not null,
 FOREIGN KEY (clientID) REFERENCES client,
 )
 
+--------------------------------------------------
 CREATE TABLE receptionist
 (
 rSSN varchar(14) PRIMARY KEY, 
@@ -127,6 +128,7 @@ courseLinks text,
 salary int not null,
 rAddress varchar(50) not null,
 rShift varchar(50) not null,
+history text,
 )
 
 CREATE TABLE trainer
@@ -141,8 +143,8 @@ courseLinks text,
 salary int not null,
 trainerAddress varchar(50) not null,
 describtion text,
+history text,
 )
-
 CREATE TABLE trains
 (
 trainerSSN VARCHAR(14) , 
@@ -188,7 +190,6 @@ CREATE TABLE trainerCourses
 (
     trainerSSN VARCHAR(14),
     courseLink VARCHAR(800),
-    PRIMARY KEY (trainerSSN, courseLink),
     FOREIGN KEY (trainerSSN) REFERENCES trainer,
 )
 
@@ -196,7 +197,6 @@ CREATE TABLE receptionistCourses
 (
     rSSN VARCHAR(14),
     courseLink VARCHAR(800),
-    PRIMARY KEY(rSSN, courseLink),
     FOREIGN KEY (rSSN) REFERENCES receptionist,
 )
 
@@ -210,6 +210,69 @@ CREATE TABLE foodMeasurement
 	numCups int,
 	FOREIGN KEY (clientID) REFERENCES client,
 )
+
+CREATE TABLE rating
+(
+	clientID int not null,  
+	surveyDate date not null,
+	trainerRate int not null,
+	facilityRate int not null,
+	machinesRate int not null,
+	receptionistRate int not null,
+	PRIMARY KEY(clientID,surveyDate),
+	FOREIGN KEY (clientID) REFERENCES client,
+)
+
+CREATE TABLE ClientProfiles
+(
+	clientID int not null,  
+	userName varchar(50) not null,
+	pass	varchar(50) not null,
+	PRIMARY KEY (userName, pass),
+	FOREIGN KEY (clientID) REFERENCES client,
+)
+
+CREATE TABLE TrainerProfiles
+(
+    trainerSSN varchar(14) not null,  
+	userName varchar(50) not null,
+	pass	varchar(50) not null,
+	FOREIGN KEY (trainerSSN) REFERENCES trainer,
+	PRIMARY KEY (userName, pass)
+)
+
+CREATE TABLE receptionistProfiles
+(
+    rSSN varchar(14) not null,  
+	userName varchar(50) not null,
+	pass	varchar(50) not null,
+	FOREIGN KEY (rSSN) REFERENCES receptionist,
+	PRIMARY KEY (userName, pass)
+)
+
+CREATE TABLE adminProfiles
+(
+    adminSSN varchar(14) not null,  
+	userName varchar(50) not null,
+	pass	varchar(50) not null,
+	FOREIGN KEY (adminSSN) REFERENCES gymAdmin,
+	PRIMARY KEY (userName, pass)
+)
+
+CREATE TABLE Tbonus
+(
+    trainerSSN VARCHAR(14) not null, 
+	tbonus int ,
+	FOREIGN KEY (trainerSSN) REFERENCES trainer,
+)
+CREATE TABLE Rbonus
+(
+     
+	rSSN varchar(14) not null,
+	rbonus int ,
+	FOREIGN KEY (rSSN) REFERENCES receptionist
+)
+
 ----------------------------------- client Insersion -------------------------------------------------
 INSERT client (clientID, fName, lName,bDate,phoneNum,clientAddress, startDate,paymentMethod, invitationNum)
 VALUES (1, 'Youssef', 'Zakaria', '1/10/2000', '01064504003', '36 el jabal october', '10/10/2020', 'cash', 3)
@@ -472,3 +535,46 @@ Insert contain (workoutID,excersiseID)
 Values (5,1)
 Insert contain (workoutID,excersiseID)
 Values (5,6)
+
+
+INSERT gymAdmin (adminSSN,fName,lName,phoneNum,salary,adminAddress)
+VALUES ('12345678912345', 'zakaria', 'mohamed', '01004050543', 10000, '15 el haram street')
+
+Insert adminProfiles (adminSSN,userName,pass)
+VALUES ('12345678912345','adminuser1','12345678')
+
+Insert ClientProfiles(clientID,userName,pass)
+VALUES (1,'clientuser1','12345678')
+Insert ClientProfiles(clientID,userName,pass)
+VALUES (2,'clientuser2','12345678')
+
+Insert TrainerProfiles(trainerSSN,userName,pass)
+VALUES ('24621238976533','traineruser1','12345678')
+Insert TrainerProfiles(trainerSSN,userName,pass)
+VALUES ('29762368974566','traineruser2','12345678')
+
+Insert receptionistProfiles(rSSN,userName,pass)
+VALUES ('20106160111279','receptionistuser1','12345678')
+Insert receptionistProfiles(rSSN,userName,pass)
+VALUES ('20106160100164','receptionistuser2','12345678')
+
+
+----------------------------------- Trainer bonus Insersion -------------------------------------------------
+
+INSERT Tbonus (trainerSSN, tbonus)
+VALUES (30008976564599, 300)
+INSERT Tbonus (trainerSSN, tbonus)
+VALUES (28885675542369, 400)
+INSERT Tbonus (trainerSSN, tbonus)
+VALUES (30008976564599, 500)
+
+
+----------------------------------- Reception bonus Insersion -------------------------------------------------
+INSERT Rbonus (rSSN, rbonus)
+VALUES (20106160100164, 300)
+INSERT Rbonus (rSSN, rbonus)
+VALUES (20106160111279, 400)
+INSERT Rbonus (rSSN, rbonus)
+VALUES (20106170100179, 500)
+
+

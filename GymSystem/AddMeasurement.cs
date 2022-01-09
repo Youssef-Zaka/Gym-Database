@@ -55,5 +55,16 @@ namespace GymSystem
                 
             }
         }
+
+        private void exitbutton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void backbutton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ClientMeasurements().Show();
+        }
     }
 }

@@ -40,6 +40,8 @@ namespace GymSystem
             this.waterLabel = new System.Windows.Forms.Label();
             this.SleepLabel = new System.Windows.Forms.Label();
             this.CalloriesLabel = new System.Windows.Forms.Label();
+            this.backbutton = new System.Windows.Forms.Button();
+            this.exitbutton = new System.Windows.Forms.Button();
             this.ClientAchievmentsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WaterTrackbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HoursTrackbar)).BeginInit();
@@ -53,6 +55,8 @@ namespace GymSystem
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ClientAchievmentsGroupBox.AutoSize = true;
             this.ClientAchievmentsGroupBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientAchievmentsGroupBox.Controls.Add(this.backbutton);
+            this.ClientAchievmentsGroupBox.Controls.Add(this.exitbutton);
             this.ClientAchievmentsGroupBox.Controls.Add(this.Water);
             this.ClientAchievmentsGroupBox.Controls.Add(this.WaterTrackbar);
             this.ClientAchievmentsGroupBox.Controls.Add(this.AddMeasurementButton);
@@ -67,7 +71,7 @@ namespace GymSystem
             this.ClientAchievmentsGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.ClientAchievmentsGroupBox.Name = "ClientAchievmentsGroupBox";
             this.ClientAchievmentsGroupBox.Padding = new System.Windows.Forms.Padding(4);
-            this.ClientAchievmentsGroupBox.Size = new System.Drawing.Size(1077, 510);
+            this.ClientAchievmentsGroupBox.Size = new System.Drawing.Size(1077, 513);
             this.ClientAchievmentsGroupBox.TabIndex = 6;
             this.ClientAchievmentsGroupBox.TabStop = false;
             // 
@@ -78,7 +82,7 @@ namespace GymSystem
             this.Water.Location = new System.Drawing.Point(30, 368);
             this.Water.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Water.Name = "Water";
-            this.Water.Size = new System.Drawing.Size(65, 25);
+            this.Water.Size = new System.Drawing.Size(52, 20);
             this.Water.TabIndex = 9;
             this.Water.Text = "Water";
             // 
@@ -89,7 +93,7 @@ namespace GymSystem
             this.WaterTrackbar.Margin = new System.Windows.Forms.Padding(4);
             this.WaterTrackbar.Maximum = 30;
             this.WaterTrackbar.Name = "WaterTrackbar";
-            this.WaterTrackbar.Size = new System.Drawing.Size(770, 56);
+            this.WaterTrackbar.Size = new System.Drawing.Size(770, 45);
             this.WaterTrackbar.TabIndex = 8;
             this.WaterTrackbar.Value = 10;
             this.WaterTrackbar.Scroll += new System.EventHandler(this.trackBar1_Scroll);
@@ -113,7 +117,7 @@ namespace GymSystem
             this.Hours.Location = new System.Drawing.Point(29, 252);
             this.Hours.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Hours.Name = "Hours";
-            this.Hours.Size = new System.Drawing.Size(64, 25);
+            this.Hours.Size = new System.Drawing.Size(52, 20);
             this.Hours.TabIndex = 7;
             this.Hours.Text = "Hours";
             // 
@@ -124,7 +128,7 @@ namespace GymSystem
             this.HoursTrackbar.Margin = new System.Windows.Forms.Padding(4);
             this.HoursTrackbar.Maximum = 24;
             this.HoursTrackbar.Name = "HoursTrackbar";
-            this.HoursTrackbar.Size = new System.Drawing.Size(770, 56);
+            this.HoursTrackbar.Size = new System.Drawing.Size(770, 45);
             this.HoursTrackbar.TabIndex = 6;
             this.HoursTrackbar.Value = 8;
             this.HoursTrackbar.Scroll += new System.EventHandler(this.HeightTrackbar_Scroll);
@@ -136,7 +140,7 @@ namespace GymSystem
             this.Cal.Location = new System.Drawing.Point(29, 95);
             this.Cal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Cal.Name = "Cal";
-            this.Cal.Size = new System.Drawing.Size(88, 25);
+            this.Cal.Size = new System.Drawing.Size(69, 20);
             this.Cal.TabIndex = 5;
             this.Cal.Text = "Callories";
             // 
@@ -147,7 +151,7 @@ namespace GymSystem
             this.CalTrackBar.Margin = new System.Windows.Forms.Padding(4);
             this.CalTrackBar.Maximum = 5000;
             this.CalTrackBar.Name = "CalTrackBar";
-            this.CalTrackBar.Size = new System.Drawing.Size(901, 56);
+            this.CalTrackBar.Size = new System.Drawing.Size(901, 45);
             this.CalTrackBar.TabIndex = 4;
             this.CalTrackBar.TickFrequency = 100;
             this.CalTrackBar.Value = 2200;
@@ -160,7 +164,7 @@ namespace GymSystem
             this.waterLabel.Location = new System.Drawing.Point(29, 337);
             this.waterLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.waterLabel.Name = "waterLabel";
-            this.waterLabel.Size = new System.Drawing.Size(141, 25);
+            this.waterLabel.Size = new System.Drawing.Size(114, 20);
             this.waterLabel.TabIndex = 3;
             this.waterLabel.Text = "Water Glasses";
             // 
@@ -171,7 +175,7 @@ namespace GymSystem
             this.SleepLabel.Location = new System.Drawing.Point(29, 222);
             this.SleepLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SleepLabel.Name = "SleepLabel";
-            this.SleepLabel.Size = new System.Drawing.Size(114, 25);
+            this.SleepLabel.Size = new System.Drawing.Size(93, 20);
             this.SleepLabel.TabIndex = 2;
             this.SleepLabel.Text = "Hours Slept";
             // 
@@ -182,9 +186,35 @@ namespace GymSystem
             this.CalloriesLabel.Location = new System.Drawing.Point(29, 64);
             this.CalloriesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CalloriesLabel.Name = "CalloriesLabel";
-            this.CalloriesLabel.Size = new System.Drawing.Size(88, 25);
+            this.CalloriesLabel.Size = new System.Drawing.Size(69, 20);
             this.CalloriesLabel.TabIndex = 1;
             this.CalloriesLabel.Text = "Callories";
+            // 
+            // backbutton
+            // 
+            this.backbutton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.backbutton.FlatAppearance.BorderSize = 0;
+            this.backbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backbutton.Image = global::GymSystem.Properties.Resources.output_onlinepngtools__7_;
+            this.backbutton.Location = new System.Drawing.Point(851, 446);
+            this.backbutton.Name = "backbutton";
+            this.backbutton.Size = new System.Drawing.Size(111, 45);
+            this.backbutton.TabIndex = 59;
+            this.backbutton.UseCompatibleTextRendering = true;
+            this.backbutton.UseVisualStyleBackColor = false;
+            this.backbutton.Click += new System.EventHandler(this.backbutton_Click);
+            // 
+            // exitbutton
+            // 
+            this.exitbutton.FlatAppearance.BorderSize = 0;
+            this.exitbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitbutton.Image = global::GymSystem.Properties.Resources.Button_Close_icon;
+            this.exitbutton.Location = new System.Drawing.Point(968, 446);
+            this.exitbutton.Name = "exitbutton";
+            this.exitbutton.Size = new System.Drawing.Size(90, 43);
+            this.exitbutton.TabIndex = 58;
+            this.exitbutton.UseVisualStyleBackColor = true;
+            this.exitbutton.Click += new System.EventHandler(this.exitbutton_Click);
             // 
             // AddFoodMeasurement
             // 
@@ -219,5 +249,7 @@ namespace GymSystem
         private System.Windows.Forms.Label CalloriesLabel;
         private System.Windows.Forms.Label Water;
         private System.Windows.Forms.TrackBar WaterTrackbar;
+        private System.Windows.Forms.Button backbutton;
+        private System.Windows.Forms.Button exitbutton;
     }
 }

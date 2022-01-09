@@ -276,6 +276,37 @@ namespace GymSystem
             string query = "UPDATE facility SET mCost='" + mCost + "', lastM= + '" + Convert.ToDateTime(lastM) + "',mFrequency= + '" + mFrequency + "'WHERE facilityName='" + facilityname + "';";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public DataTable AdminLogin(string username, string pass)
+        {
+            string query = "select adminProfiles.adminSSN from adminProfiles where  adminProfiles.userName = '" + username +
+                "' AND adminProfiles.pass = '" + pass + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable TrainerLogin(string username, string pass)
+        {
+            string query = "select TrainerProfiles.trainerSSN from TrainerProfiles where  TrainerProfiles.userName = '" + username +
+                "' AND TrainerProfiles.pass = '" + pass + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable receptionistLogin(string username, string pass)
+        {
+            string query = "select receptionistProfiles.rSSN from receptionistProfiles where  receptionistProfiles.userName = '" + username +
+                "' AND receptionistProfiles.pass = '" + pass + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable clientLogin(string username, string pass)
+        {
+            string query = "select ClientProfiles.clientID from ClientProfiles where  ClientProfiles.userName = '" + username +
+                "' AND ClientProfiles.pass = '" + pass + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+
+
         public void TerminateConnection()
         {
             dbMan.CloseConnection();

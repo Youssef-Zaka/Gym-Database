@@ -85,5 +85,22 @@ namespace GymSystem
             this.Close();
             AddM.Show();
         }
+
+        private void exitbutton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void backbutton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ClientWelcome().Show();
+        }
+
+        private void backbutton_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ClientWelcome().Show();
+        }
     }
 }

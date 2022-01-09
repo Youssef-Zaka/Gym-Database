@@ -30,10 +30,12 @@ namespace GymSystem
         private void InitializeComponent()
         {
             this.ClientAchievmentsGroupBox = new System.Windows.Forms.GroupBox();
+            this.backbutton = new System.Windows.Forms.Button();
+            this.exitbutton = new System.Windows.Forms.Button();
+            this.ClassesTable = new System.Windows.Forms.Label();
+            this.facilitieslabel = new System.Windows.Forms.Label();
             this.ClientClassesScheduleDatagrid = new System.Windows.Forms.DataGridView();
             this.ClientFacilitiesScheduleDatagrid = new System.Windows.Forms.DataGridView();
-            this.facilitieslabel = new System.Windows.Forms.Label();
-            this.ClassesTable = new System.Windows.Forms.Label();
             this.ClientAchievmentsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientClassesScheduleDatagrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientFacilitiesScheduleDatagrid)).BeginInit();
@@ -46,6 +48,8 @@ namespace GymSystem
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ClientAchievmentsGroupBox.AutoSize = true;
             this.ClientAchievmentsGroupBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientAchievmentsGroupBox.Controls.Add(this.backbutton);
+            this.ClientAchievmentsGroupBox.Controls.Add(this.exitbutton);
             this.ClientAchievmentsGroupBox.Controls.Add(this.ClassesTable);
             this.ClientAchievmentsGroupBox.Controls.Add(this.facilitieslabel);
             this.ClientAchievmentsGroupBox.Controls.Add(this.ClientClassesScheduleDatagrid);
@@ -58,6 +62,50 @@ namespace GymSystem
             this.ClientAchievmentsGroupBox.TabIndex = 6;
             this.ClientAchievmentsGroupBox.TabStop = false;
             // 
+            // backbutton
+            // 
+            this.backbutton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.backbutton.FlatAppearance.BorderSize = 0;
+            this.backbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backbutton.Image = global::GymSystem.Properties.Resources.output_onlinepngtools__7_;
+            this.backbutton.Location = new System.Drawing.Point(708, 355);
+            this.backbutton.Name = "backbutton";
+            this.backbutton.Size = new System.Drawing.Size(111, 45);
+            this.backbutton.TabIndex = 63;
+            this.backbutton.UseCompatibleTextRendering = true;
+            this.backbutton.UseVisualStyleBackColor = false;
+            this.backbutton.Click += new System.EventHandler(this.backbutton_Click_1);
+            // 
+            // exitbutton
+            // 
+            this.exitbutton.FlatAppearance.BorderSize = 0;
+            this.exitbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitbutton.Image = global::GymSystem.Properties.Resources.Button_Close_icon;
+            this.exitbutton.Location = new System.Drawing.Point(825, 355);
+            this.exitbutton.Name = "exitbutton";
+            this.exitbutton.Size = new System.Drawing.Size(90, 43);
+            this.exitbutton.TabIndex = 62;
+            this.exitbutton.UseVisualStyleBackColor = true;
+            this.exitbutton.Click += new System.EventHandler(this.exitbutton_Click);
+            // 
+            // ClassesTable
+            // 
+            this.ClassesTable.AutoSize = true;
+            this.ClassesTable.Location = new System.Drawing.Point(208, 19);
+            this.ClassesTable.Name = "ClassesTable";
+            this.ClassesTable.Size = new System.Drawing.Size(57, 16);
+            this.ClassesTable.TabIndex = 3;
+            this.ClassesTable.Text = "Classes";
+            // 
+            // facilitieslabel
+            // 
+            this.facilitieslabel.AutoSize = true;
+            this.facilitieslabel.Location = new System.Drawing.Point(700, 19);
+            this.facilitieslabel.Name = "facilitieslabel";
+            this.facilitieslabel.Size = new System.Drawing.Size(61, 16);
+            this.facilitieslabel.TabIndex = 2;
+            this.facilitieslabel.Text = "Facilities";
+            // 
             // ClientClassesScheduleDatagrid
             // 
             this.ClientClassesScheduleDatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -65,7 +113,7 @@ namespace GymSystem
             this.ClientClassesScheduleDatagrid.Name = "ClientClassesScheduleDatagrid";
             this.ClientClassesScheduleDatagrid.RowHeadersWidth = 51;
             this.ClientClassesScheduleDatagrid.RowTemplate.Height = 24;
-            this.ClientClassesScheduleDatagrid.Size = new System.Drawing.Size(417, 349);
+            this.ClientClassesScheduleDatagrid.Size = new System.Drawing.Size(417, 267);
             this.ClientClassesScheduleDatagrid.TabIndex = 1;
             // 
             // ClientFacilitiesScheduleDatagrid
@@ -75,26 +123,8 @@ namespace GymSystem
             this.ClientFacilitiesScheduleDatagrid.Name = "ClientFacilitiesScheduleDatagrid";
             this.ClientFacilitiesScheduleDatagrid.RowHeadersWidth = 51;
             this.ClientFacilitiesScheduleDatagrid.RowTemplate.Height = 24;
-            this.ClientFacilitiesScheduleDatagrid.Size = new System.Drawing.Size(417, 349);
+            this.ClientFacilitiesScheduleDatagrid.Size = new System.Drawing.Size(417, 344);
             this.ClientFacilitiesScheduleDatagrid.TabIndex = 0;
-            // 
-            // facilitieslabel
-            // 
-            this.facilitieslabel.AutoSize = true;
-            this.facilitieslabel.Location = new System.Drawing.Point(700, 19);
-            this.facilitieslabel.Name = "facilitieslabel";
-            this.facilitieslabel.Size = new System.Drawing.Size(62, 17);
-            this.facilitieslabel.TabIndex = 2;
-            this.facilitieslabel.Text = "Facilities";
-            // 
-            // ClassesTable
-            // 
-            this.ClassesTable.AutoSize = true;
-            this.ClassesTable.Location = new System.Drawing.Point(208, 19);
-            this.ClassesTable.Name = "ClassesTable";
-            this.ClassesTable.Size = new System.Drawing.Size(57, 17);
-            this.ClassesTable.TabIndex = 3;
-            this.ClassesTable.Text = "Classes";
             // 
             // ClientFacilitiesSchedule
             // 
@@ -122,5 +152,7 @@ namespace GymSystem
         private System.Windows.Forms.DataGridView ClientClassesScheduleDatagrid;
         private System.Windows.Forms.Label ClassesTable;
         private System.Windows.Forms.Label facilitieslabel;
+        private System.Windows.Forms.Button backbutton;
+        private System.Windows.Forms.Button exitbutton;
     }
 }

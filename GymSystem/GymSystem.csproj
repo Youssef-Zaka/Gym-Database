@@ -89,6 +89,12 @@
     <Compile Include="ClientSchedule.Designer.cs">
       <DependentUpon>ClientSchedule.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientWelcome.Designer.cs">
+      <DependentUpon>ClientWelcome.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientWorkouts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,12 @@
     </Compile>
     <Compile Include="Hire_Fire.Designer.cs">
       <DependentUpon>Hire_Fire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Machines.cs">
       <SubType>Form</SubType>
@@ -192,6 +204,9 @@
     <EmbeddedResource Include="ClientSchedule.resx">
       <DependentUpon>ClientSchedule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClientWelcome.resx">
+      <DependentUpon>ClientWelcome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientWorkouts.resx">
       <DependentUpon>ClientWorkouts.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Hire_Fire.resx">
       <DependentUpon>Hire_Fire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Machines.resx">
       <DependentUpon>Machines.cs</DependentUpon>
@@ -256,6 +274,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Button-Close-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
